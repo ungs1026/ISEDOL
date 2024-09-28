@@ -1,0 +1,536 @@
+/*English*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Kode Mono');
+@import url('https://fonts.googleapis.com/css?family=ADLaM Display');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap');
+
+/*Korean*/
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+* {
+	font-family: 'ADLaM Display', sans-serif;
+	font-weight: bold;
+	font-size: 1rem;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	padding: 0 2rem;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 6rem;
+	background-color: #ffffff;
+	/* Optional: background color */
+	z-index: 2000;
+	/* Ensure it stays on top */
+	transition: box-shadow 0.3s ease;
+	/* 그림자 효과 부드럽게 */
+	padding-top: 10px;
+}
+
+header.scrolled {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	/* 그림자 추가 */
+}
+
+a {
+	text-decoration-line: none;
+}
+/*=================nav=================*/
+
+.nav-left {
+	flex: 1;
+}
+
+.nav-left .logo {
+	height: 80px;
+	object-fit: contain;
+	filter: drop-shadow(0 0 1px black);
+}
+
+.nav-center {
+	flex: 2;
+	display: flex;
+	justify-content: center;
+	gap: 4rem;
+}
+
+.nav-center a {
+	color: black;
+	text-decoration: none;
+	font-size: 1.3rem;
+	font-weight: 700;
+	font-style: normal;
+	transition: color 0.3s ease;
+}
+
+.nav-center a:hover {
+	color: #c4baf4;
+}
+
+.nav-right {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	justify-content: flex-end;
+}
+
+.nav-right img {
+	width: 30px;
+	height: 30px;
+	object-fit: contain;
+	border-radius: 50%;
+	filter: drop-shadow(0 0 2px black);
+}
+
+.nav-right .user {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.3rem;
+}
+/* 레이블 스타일 */
+label {
+	font-family: 'ADLaM Display';
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+/* 네비게이션 바와 본문 영역 사이의 파란색 선 */
+.nav-separator {
+	height: 3px;
+	background-color: rgb(148, 83, 148);
+	min-width: 100%;
+	position: absolute;
+	z-index: 10;
+}
+
+
+/*===========================regular event=======================*/
+/*event*/
+.event {
+	width: 100%;
+	height: 500px;
+	position: relative;
+	margin-top: 3rem;
+}
+
+.event.hide {
+	/* 토글 */
+	height: 0;
+}
+
+.event .swiper-container {
+	/* 819px 슬라이드 3개와 그 사이 여백 10px씩 = 2477px */
+	width: calc(819px * 3 + 20px);
+	height: 370px;
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	margin-top: 20px;
+	margin-left: calc((819px * 3 + 20px) / -2.14);
+	/* 왼쪽으로 50%밀고 마진으로 가로 넓의의 절반만큼 움직임.*/
+}
+
+.event .swiper-slide {
+	/*양옆흐림*/
+	position: relative;
+	width: 820px;
+	height: 370px;
+	opacity: 0.5;
+	transition: opacity 1s;
+}
+
+.event .swiper-slide img {
+	width: 650px;
+	height: 370px;
+	object-fit: cover;
+	border-radius: 2rem;
+}
+
+.event .swiper-slide-active {
+	opacity: 1;
+}
+
+.event .swiper-slide .btn {
+	/*width: 130px;*/
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.event .swiper-pagination {
+	bottom: 75px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-left: 24rem;
+	z-index: 100;
+}
+
+.event .swiper-pagination .swiper-pagination-bullet {
+	background-color: green;
+	width: 12px;
+	height: 12px;
+	margin-right: 4px;
+	outline: none;
+}
+
+.event .swiper-pagination .swiper-pagination-bullet-active {
+	background-color: black;
+}
+
+.event .swiper-prev,
+.event .swiper-next {
+	width: 40px;
+	height: 40px;
+	outline: none;
+	border: 2px solid #333;
+	border-radius: 50%;
+	position: absolute;
+	/* Swiper Container 높이의 절반만큼 끌어올림 */
+	/* 버튼 높이의 절반만큼 추가로 끌어올림 */
+	top: 300px;
+	z-index: 1;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: .4s;
+}
+
+.event .swiper-prev {
+	left: 50%;
+	margin-left: -460px;
+}
+
+.event .swiper-next {
+	right: 50%;
+	margin-right: -460px;
+}
+
+.event .swiper-prev:hover,
+.event .swiper-next:hover {
+	background-color: #333;
+	color: #fff;
+}
+
+/*===========================MEMBER-ICON===========================*/
+.member-icon-group {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.member-icon-group .member .member-img {
+	display: flex;
+	justify-content: center;
+}
+
+.member-icon-group .member .member-img a>img {
+	width: 6rem;
+	height: 6rem;
+	border-radius: 40%;
+	margin: 5px;
+}
+
+.member-icon-group .member:hover .member-img a>img {
+	transform: scale(1.1) translateY(-1.2rem);
+	transition: all 0.5s ease-in-out;
+}
+
+.member-icon-group .member .member-img p {
+	margin-top: 10px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.member-icon-group .member .member-sns {
+	display: flex;
+}
+
+.member-icon-group .member .member-sns a img {
+	width: 2.5rem;
+	height: 2.5rem;
+	object-fit: cover;
+	border-radius: 10px;
+	margin: 5px;
+}
+
+/*===========================ALBUM===========================*/
+.kidding {
+	position: relative;
+	width: 100%;
+	height: 30rem;
+	margin-block: 2rem;
+}
+
+.kidding iframe {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	pointer-events: none; /* iframe의 상호작용을 막음 (버튼 클릭 가능) */
+	opacity: 0.6; /* 배경 투명도 설정 */
+	z-index: -1; /* 내용보다 아래에 위치하게 설정 */
+}
+
+.kidding .content{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 30rem;
+	gap: 2rem;
+	color: black;
+}
+
+.kidding .content .kid-left {
+	display: flex;
+	width: 30rem;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.kidding .content .kid-left img {
+	width: 100%;
+	object-fit: cover;
+	border-radius: 2rem;
+	filter: drop-shadow(0 0 2px black);
+}
+
+.kidding .content .kid-left img:hover {
+	transform: rotateY(360deg);
+	transition: all 1.5s ease-in-out;
+}
+
+.kidding .content .kid-left button {
+	width: 18%;
+	height: 2rem;
+	margin-left: 22rem;
+	text-transform: uppercase;
+	background-color: white;
+	border-radius: 2rem;
+	letter-spacing: 0.06rem;
+}
+
+.kidding .content .kid-left button:hover {
+	background-color: black;
+	color: white;
+	transition: all 0.5s ease-in-out;
+	cursor: pointer;
+}
+
+.kidding .content .kid-right {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 3rem;
+	gap: 2rem;
+}
+
+.kidding .content .kid-right img {
+	width: 4rem;
+	object-fit: contain;
+}
+
+.kidding .content .kid-right .text-section .album-description {
+	display: flex;
+	align-items:center;
+	gap: 0.6rem;
+}
+
+.album-title {
+	font-family: 'ADLaM Display', sans-serif;
+	font-weight: bold;
+	font-size: 1.2rem;
+	margin-block: 1rem;
+}
+
+.album-description {
+	font-family: "Nanum Gothic", sans-serif;
+	font-weight: 900;
+	font-size: 0.8rem;
+}
+
+/*===========================modal===========================*/
+/* 모달 기본 스타일 */
+.modal {
+	display: none; /* 처음에는 모달을 숨김 */
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+}
+
+/* 모달 콘텐츠 스타일 (고정된 높이 설정 및 내부 스크롤 활성화) */
+.modal-content {
+	background-color: #fff;
+	margin: 9% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+	max-width: 500px;
+	height: 40rem; /* 고정된 높이 */
+	border-radius: 8px;
+	overflow-y: auto; /* 세로 스크롤 활성화 */
+}
+
+.modal-content h2 {
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+	padding-left: 2rem;
+}
+
+.modal-content p {
+	font-family: "Nanum Gothic", sans-serif;
+	font-size: 1rem;
+	line-height: 1.6rem;
+	text-align: center;
+}
+
+/* 닫기 버튼 스타일 */
+.close-btn {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.close-btn:hover, .close-btn:focus {
+	color: #000;
+	text-decoration: none;
+}
+
+/* 가사 내용에서 줄바꿈과 공백을 유지하도록 설정 */
+#lyricsContent {
+	white-space: pre-wrap;
+	/* 줄바꿈과 여러 공백을 그대로 유지 */
+}
+
+
+/*===========================FOOTER===========================*/
+ul {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.socials {
+	gap: 20px;
+}
+
+.socials li {
+	width: 7.8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.socials li {
+	transition: all 0.5s;
+	margin-bottom: 18px;
+	margin-top: 15px;
+}
+
+.socials li:hover {
+	margin-top: -15px;
+}
+
+.socials li a {
+	color: gray;
+}
+
+.socials li p {
+	font-size: 0.7rem;
+}
+
+.socials li a>img {
+	width: 16px;
+	filter: invert(100%);
+	margin-top: 0.1rem;
+}
+
+.links {
+	transform: scale(1);
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+.links li a {
+	font-size: 1rem;
+	color: gray;
+}
+
+.links li:hover,
+.links li a:hover{
+	transform: scale(1.3);
+	color: white;
+	transition: all 0.5s ease;
+}
+
+.legal {
+	font-size: 12px;
+	margin: 0;
+}
+
+footer {
+	position: relative;
+	left: 0;
+	bottom: 0;
+	display: flex;
+	width: 100%;
+	height: 230px;
+	background-color: #000;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	gap: 30px;
+	padding-bottom: 50px;
+	padding-left: 60px;
+	width: 100%;
+	color: white;
+}
+
+@media (width > 420px) {
+	section {
+		align-items: center;
+		padding-left: 0;
+		gap: 20px;
+	}
+
+	.links {
+		gap: 60px;
+		flex-direction: row;
+	}
+}

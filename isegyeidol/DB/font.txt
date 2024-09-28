@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Kode Mono');
+@import url('https://fonts.googleapis.com/css?family=ADLaM Display');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap')
+
+/*Korean*/
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+font-family: "Open Sans", sans-serif;
+font-family: "Nunito", sans-serif;
+font-family: "Poppins", sans-serif;
+font-family: 'ADLaM Display', sans-serif;
+font-family: "Baloo Bhaijaan 2", sans-serif;
+
+/*korean*/
+font-family: "Nanum Gothic", sans-serif;
+font-family: "Jua", sans-serif;
+
+price : font-family: "Kode Mono", monospace;

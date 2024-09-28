@@ -1,0 +1,831 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Kode Mono');
+@import url('https://fonts.googleapis.com/css?family=ADLaM Display');
+
+/*korean*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+/* 부드러운 스크롤 */
+html {
+  scroll-behavior: smooth;
+}
+
+
+h1 {
+  font-weight: 700;
+  font-style: normal;
+}
+
+p {
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 6rem;
+  background-color: #ffffff;
+  /* Optional: background color */
+  z-index: 2000;
+  /* Ensure it stays on top */
+  transition: box-shadow 0.3s ease;
+  /* 그림자 효과 부드럽게 */
+  padding-top: 10px;
+}
+
+header.scrolled {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* 그림자 추가 */
+}
+
+main {
+  margin-top: 5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 2rem;
+}
+
+a {
+  text-decoration-line: none;
+}
+
+.nav-left {
+  flex: 1;
+}
+
+.nav-left .logo {
+  margin-top: 14px;
+  height: 80px;
+  object-fit: contain;
+	filter: drop-shadow(0 0 1px black);
+}
+
+.nav-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.nav-center a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+	letter-spacing: 0.01rem;
+  font-style: normal;
+  transition: color 0.3s ease;
+}
+
+.nav-center a:hover {
+  color: #c4baf4;
+}
+
+.nav-right {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	justify-content: flex-end;
+}
+
+.nav-right img {
+	width: 30px;
+	height: 30px;
+	object-fit: contain;
+	border-radius: 50%;
+	filter: drop-shadow(0 0 2px black);
+}
+
+.nav-right .user {
+	text-transform: uppercase;
+	font-weight: bold;
+  color: black;
+	font-size: 1.3rem;
+}
+
+/* 레이블 스타일 */
+label {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* 네비게이션 바와 본문 영역 사이의 파란색 선 */
+.nav-separator {
+  height: 3px;
+  background-color: #c4baf4;
+  min-width: 100%;
+  position: absolute;
+  z-index: 10;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+}
+
+* {
+  font-family: 'ADLaM Display', sans-serif;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+body {
+  background-color: white;
+  font-size: 14px;
+  min-width: 720px;
+}
+
+#nowPlayingBarContainer {
+  width: 100%;
+  background-color: white;
+  border-top: 5px solid black;
+  bottom: 0;
+  position: fixed;
+  min-width: 620px;
+}
+
+#nowPlayingBar {
+  display: flex;
+  height: 90px;
+  padding: 14px;
+  box-sizing: border-box;
+}
+
+#nowPlayingLeft,
+#nowPlayingRight {
+  width: 30%;
+  min-width: 180px;
+}
+
+#nowPlayingRight {
+  position: relative;
+  margin-top: 16px;
+}
+
+#nowPlayingCenter {
+  width: 40%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#nowPlayingBar .content {
+  width: 100%;
+  height: 57px;
+}
+
+.mainimg {
+  display: flex;
+  margin: auto;
+}
+
+.b_bg {
+  border-radius: 30px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  position: relative;
+  margin: 10px 10px 10px 0;
+}
+
+#bg_hidden {
+  object-fit: cover;
+  margin: auto;
+}
+
+@media screen and (max-width: 1080px) {
+  #bg_hidden {
+    display: none;
+  }
+}
+
+.playerControls .buttons {
+  margin: 0 auto;
+  display: table;
+}
+
+.controlButton {
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.controlButton img {
+  width: 20px;
+  height: 20px;
+}
+
+.controlButton.play img,
+.controlButton.pause img {
+  width: 32px;
+  height: 32px;
+}
+
+.controlButton:hover {
+  cursor: pointer;
+}
+
+.progressTime {
+  color: black;
+  font-size: 11px;
+  min-width: 40px;
+  text-align: center;
+}
+
+.playbackBar {
+  display: flex;
+}
+
+.progressBar {
+  width: 100%;
+  height: 12px;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.progressBarBg {
+  background-color: black;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+}
+
+.progress {
+  background-color: gray;
+  height: 4px;
+  width: 0;
+  border-radius: 2px;
+}
+
+.playbackBar .progressBar {
+  margin-top: 3px;
+}
+
+#nowPlayingLeft .albumArtwork {
+  height: 100%;
+  width: 110px;
+  margin-right: 20px;
+  float: left;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+#nowPlayingLeft .trackInfo {
+  display: table;
+}
+
+#nowPlayingLeft .trackInfo .trackName span {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: bold;
+  color: black;
+  margin: 6px 0;
+  display: inline-block;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+#nowPlayingLeft .trackInfo .artistName span {
+  font-size: 12px;
+  color: black;
+}
+
+.volumeBar {
+  display: flex;
+  width: 180px;
+  position: absolute;
+  right: 0;
+}
+
+.volumeBar .progressBar {
+  align-items: center;
+  width: 125px;
+  height: 25px;
+}
+
+#topContainer {
+  min-height: 100%;
+  width: 100%;
+}
+
+#navBarContainer {
+  background-color: #fff;
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navBar {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-direction: column;
+}
+
+.logo {
+  margin-bottom: 15px;
+}
+
+.logo img {
+  width: 100px;
+}
+
+.navBar .group {
+  border-top: 1px solid #a0a0a0;
+  padding: 10px 0;
+}
+
+.navItem {
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 700;
+  display: block;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.navItemLink {
+  color: #080808;
+  font-size: 19px;
+  text-decoration: none;
+}
+
+.navItemLink:hover {
+  color: #c4baf4;
+}
+
+.navItemLink .icon {
+  position: absolute;
+  right: 0;
+  top: 6px;
+  width: 25px;
+}
+
+#mainViewContainer {
+  margin-left: 220px;
+  padding-top: 100px;
+  padding-bottom: 90px;
+  width: calc(100% - 220px);
+}
+
+#mainContent {
+  width: inherit;
+
+}
+
+.pageHeadingBig {
+  padding: 0%;
+  text-align: center;
+}
+
+.gridViewItem {
+  left: 4%;
+  position: relative;
+  display: inline-block;
+  margin-right: 65px;
+  width: 20%;
+  max-width: 180px;
+  min-width: 150px;
+  margin-bottom: 20px;
+}
+
+.gridViewItem img {
+  border-radius: 3rem;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  filter: drop-shadow(0 0 5px black);
+}
+
+.gridViewItem img:hover {
+  transform: scale(1.1) translateY(-12px);
+	transition: all 0.5s ease-in-out;
+}
+
+.gridViewInfo {
+  color: black;
+  font-family: 'ADLaM Display', sans-serif;
+  font-weight: 900;
+  text-align: center;
+  padding: 15px 0;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.gridViewInfo:hover {
+	transform: scale(1.05);
+	transition: transform 0.5s ease-in-out;
+}
+
+.gridViewItem a {
+  text-decoration: none;
+}
+
+.entityInfo {
+  padding: 40px 0 10px 0;
+  display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+  width: 100%;
+}
+
+.entityInfo .leftSection {
+	width: 24rem;
+}
+
+.entityInfo .leftSection img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 2rem;
+}
+
+.entityInfo .rightSection {
+  padding: 5px 10px 5px 0;
+  box-sizing: border-box;
+}
+
+.entityInfo .rightSection h2 {
+  color: black;
+  text-transform: uppercase;
+}
+
+.entityInfo .rightSection p {
+  color: black;
+  font-weight: 200;
+}
+
+.tracklist {
+  padding: 0;
+}
+
+.tracklistRow {
+  height: 40px;
+  padding: 15px 10px;
+  list-style: none;
+}
+
+.tracklistRow span {
+  color: black;
+  font-weight: 200;
+}
+
+.tracklistRow:hover {
+  background-color: gray;
+}
+
+.tracklistRow .trackCount {
+  width: 8%;
+  float: left;
+}
+
+.tracklistRow .trackCount img {
+  width: 20px;
+  visibility: hidden;
+  position: absolute;
+  cursor: pointer;
+}
+
+.tracklistRow:hover .trackCount img {
+  visibility: visible;
+}
+
+.tracklistRow .trackCount span {
+  visibility: visible;
+}
+
+.tracklistRow:hover .trackCount span {
+  visibility: hidden;
+}
+
+.tracklistRow .trackInfo {
+  width: 75%;
+  float: left;
+}
+
+.tracklistRow .trackInfo span {
+  display: block;
+}
+
+.tracklistRow .trackOptions {
+  width: 5%;
+  float: left;
+  text-align: right;
+}
+
+.tracklistRow .trackOptions img {
+  width: 15px;
+  visibility: hidden;
+}
+
+.tracklistRow:hover .trackOptions img {
+  visibility: visible;
+}
+
+.tracklistRow .trackDuration {
+  width: 12%;
+  float: left;
+  text-align: right;
+}
+
+.tracklistRow .trackInfo .artistName,
+.trackCount .trackNumber {
+  color: black;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+.tracklistRow .trackInfo .trackName {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: bolder;
+  margin-bottom: 7px;
+  text-transform: uppercase;
+}
+
+
+.artistInfo {
+  text-align: center;
+}
+
+.button {
+  color: black;
+  cursor: pointer;
+	height: 50px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  font-weight: 500;
+  letter-spacing: 2px;
+  border: 2px solid #fff;
+  border-radius: 500px;
+  min-width: 130px;
+}
+
+.button.green {
+  background-color: #fff;
+  border-color: #c4baf4;
+}
+
+.button:hover {
+	height: 50px;
+  background-color: #080808;
+  color: #fff;
+	font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.borderBottom {
+  border-bottom: 1px solid #939393;
+  margin-bottom: 20px;
+}
+
+.gridViewContainer {
+  width: 100%;
+}
+
+.tracklistContainer h2,
+.gridViewContainer h2,
+.artistsContainer h2 {
+  text-align: center;
+}
+
+[role="link"] {
+  cursor:pointer;
+}
+
+[role="link"] span{
+  color: black;
+  font-size: 1.3rem;
+	letter-spacing: 0.01rem;
+}
+
+[role="link"]:hover span {
+  color: #c4baf4;
+  transition: all 0.5s;
+}
+
+.searchContainer {
+  border-radius: 10px;
+  background-color: #242424;
+  padding: 20px 28px;
+  margin-top: 20px;
+
+}
+
+.searchContainer h4 {
+  margin: 0;
+  font-weight: 300;
+}
+
+.searchContainer .searchInput {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: 2px;
+  margin-top: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.searchResultRow {
+  padding: 15px 10px;
+}
+
+.searchResultRow:hover {
+  background-color: #7783af;
+}
+
+.searchResultRow .artistName .span {
+  color: #fff;
+}
+
+.artistName {
+  color: black;
+  font-weight: bold;
+}
+
+.noResults {
+  margin: 15px;
+  display: block;
+}
+
+.buttonItems button {
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.playlistContainer {
+  padding: 10px 0;
+}
+
+
+.playlistImage {
+  border: 3px solid #282828;
+  padding: 10px;
+}
+
+.optionsMenu {
+  position: fixed;
+  background-color: #282828;
+  width: 200px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  z-index: 1000;
+  display: none;
+}
+
+.optionsMenu .item {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  font-weight: 400;
+  color: rgba(147, 147, 147, 0.8);
+  cursor: pointer;
+  height: 40px;
+  background-color: #282828;
+  font-size: 14px;
+}
+
+.optionsMenu .item:hover {
+  color: #fff;
+  background-color: #333;
+  border-color: #333;
+}
+
+.optionsMenu select {
+  border: none;
+}
+
+.userInfo h1 {
+  text-align: center;
+}
+
+.userDetails {
+  padding: 20px;
+}
+
+.userDetails .container h2 {
+  text-align: center;
+}
+
+.userDetails .container input[type="text"],
+.userDetails .container input[type="password"],
+.userDetails .container button {
+  display: block;
+  margin: 16px auto;
+}
+
+.userDetails .container input[type="text"],
+.userDetails .container input[type="password"] {
+  height: 50px;
+  width: 100%;
+  background-color: #1f1f1f;
+  border: none;
+  font-size: 18px;
+  font-weight: 300px;
+  padding: 0 20px;
+}
+
+.userDetails .container .message {
+  color: #2ebd59;
+  font-weight: 300;
+}
+
+/*notice board*/
+.notice-container {
+  margin-top: 30px;
+}
+
+.table-container {
+  width: 100%;
+  height: 76%;
+  margin-top: 30px;
+}
+
+.table-container .notice-table {
+  width: 100%;
+}
+
+.table-container .notice-table thead {
+  height: 40px;
+  background-color: blue;
+  text-align: center;
+  font-size: 20px;
+}
+
+.table-container .view_detail {
+  text-align: center;
+  font-size: 16px;
+  height: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.table-container .view_detail .text-content {
+  text-align: left;
+}
+
+.contant-container {
+  text-align: center;
+}
+
+.contant-container select,
+.contant-container select option,
+.contant-container input {
+  color: black;
+  background-color: white;
+  font-weight: bold;
+  height: 30px;
+}
+
+.contant-container button,
+.pagination-text button {
+  color: white;
+  background-color: black;
+  font-weight: bold;
+  height: 30px;
+}
+
+.pagination-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-top: 20px;
+}
+
+.pagination-text ul {
+  display: flex;
+  width: 42.5vw;
+  justify-content: right;
+  list-style: none;
+}
+
+.pagination-text li span {
+  margin-right: 10px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
