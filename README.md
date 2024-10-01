@@ -83,6 +83,7 @@ $encryptedPw = md5($pw);
 ```
 - Login을 성공한 경우 Session에 id값이 등록되어 navigation의 우측에서 유저의 이름과 Profile Picture를 확인할 수 있습니다.
 
+<br>
 
 ### **Main Page**
 ![Main Page](isegyeidol/readme_img/isedol_main.png)
@@ -102,6 +103,8 @@ var swiper = new Swiper('.swiper-container', {
 });
 ```
 - 데뷔 방송 및 콘서트의 경우 Image는 영상시청, Detail을 클릭하는 경우 나무위키에 등록된 정보를 확인할 수 있습니다.
+
+<br>
 
 ### **Goods Page**
 ![Goods Page](isegyeidol/readme_img/isedol_goods.png)
@@ -124,10 +127,14 @@ if (!empty($search)) {
 }
 ```
 
+<br>
+
 ### **Goods Detail page**
 ![Goods Detail Page](isegyeidol/readme_img/isedol_goodsDetail.png)
 - **Goods Detail page**입니다. Url의 id값을 통해 각 굿즈의 name, date, production, price를 적용합니다.
 - 해당 제품의 상세 정보, 결제, 배송, 교환 및 반품, 환불에 관한 정보를 얻을 수 있습니다.
+
+<br>
 
 ### **Song Page**
 ![Song Page](isegyeidol/readme_img/isedol_song.png)
@@ -148,6 +155,7 @@ if (isset($_GET['id'])) {
 ```
 - 노래를 클릭하는 경우 하단의 PlayBar에 해당 멤버의 모든 노래의 id값이 등록되어 재생됩니다.
 
+<br>
 
 ### **Song Artist Page**
 ![Song Artist Page](isegyeidol/readme_img/isedol_songArtist.png)
