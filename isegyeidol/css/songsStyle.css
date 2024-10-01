@@ -250,6 +250,8 @@ body {
 
 .playbackBar {
   display: flex;
+	height: 40%;
+	align-items: center;
 }
 
 .progressBar {
@@ -441,7 +443,7 @@ body {
 }
 
 .entityInfo {
-  padding: 40px 0 10px 0;
+  padding: 10px 0 10px 0;
   display: flex;
 	align-items: center;
 	justify-content: center;
@@ -605,6 +607,7 @@ body {
 .gridViewContainer h2,
 .artistsContainer h2 {
   text-align: center;
+  color: black;
 }
 
 [role="link"] {

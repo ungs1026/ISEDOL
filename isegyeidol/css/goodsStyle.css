@@ -413,6 +413,7 @@ input[type="radio"]:checked {
 	display: flex;
 	justify-content: center;
 	padding-top: 30px;
+	margin-top: 6rem;
 }
 
 .goods-content img {
@@ -485,7 +486,9 @@ input[type="radio"]:checked {
 	border-block-style: dotted;
   border-block-width: 3px;
   border-block-color: #cdb8f1;
-	font-family: "Jua", sans-serif;
+}
+.item-detail h2 {
+	font-family: "Nanum Gothic", sans-serif;
 }
 
 .item-detail ul {
@@ -493,6 +496,7 @@ input[type="radio"]:checked {
 	font-weight: bold;
 	line-height: 40px;
 	list-style-type: none;
+	font-family: "Nanum Gothic", sans-serif;
 }
 
 .item-detail ul li::before {
@@ -503,6 +507,7 @@ input[type="radio"]:checked {
 .item-detail ul li {
 	font-size: 14px;
 	margin-left: 10px;
+	font-family: "Nanum Gothic", sans-serif;
 }
 
 /* Common button styles */
@@ -517,6 +522,7 @@ input[type="radio"]:checked {
   background: none;
   color: inherit;
   position: relative;
+	border-radius: 5rem;
   z-index: 1;
 }
 .button:focus {
@@ -542,7 +548,7 @@ input[type="radio"]:checked {
 .button--wayra {
   overflow: hidden;
   width: 245px;
-  transition: border-color 0.3s, color 0.3s;
+  transition: border-color 0.5s, color 0.3s;
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 .button--wayra::before {
@@ -556,7 +562,7 @@ input[type="radio"]:checked {
   z-index: -1;
   transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
   transform-origin: 0% 100%;
-  transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+  transition: transform 0.5s, opacity 0.5s, background-color 0.5s;
 }
 .button--wayra:hover {
   color: #fff;

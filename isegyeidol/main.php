@@ -26,6 +26,10 @@
 	<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 	<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
+	<!-- Swiper -->
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 	<link rel="stylesheet" href="./css/mainStyle.css">
 	<script defer src="./js/main.js"></script>
 </head>
@@ -66,6 +70,7 @@
 	</div>
 
 	<!-- MEMBER -->
+	<h1>- MEMBER -</h1>
 	<contain class="member-icon-group">
 
 		<!--INE-->
@@ -197,6 +202,7 @@
 	</contain>
 
 	<!-- ALBUM-KIDDING -->
+	<h1>- 3rd ALBUM -</h1>
 	<div class="kidding">
 
 		<iframe src="https://www.youtube.com/embed/rDFUl2mHIW4?autoplay=1&mute=1&loop=1&playlist=rDFUl2mHIW4"
@@ -237,11 +243,167 @@
 		</div>
 	</div>
 
+	<!--DEBUT-->
+	<h1>- AfreecaTV DEBUT CONSERT-</h1>
+	<div class="debut">
+		<section class="swiper-container">
+			<div class="swiper-wrapper">
+
+				<div class="swiper-slide">
+					<a href="https://vod.afreecatv.com/player/115894243" target="_blank">
+						<img src="./source/img/consert/debut/INE.jpg" alt="INE">
+					</a>
+					<div class="text-area">
+						<a href="https://namu.wiki/w/%EC%95%84%EC%9D%B4%EB%84%A4%20%EC%95%84%ED%94%84%EB%A6%AC%EC%B9%B4TV%20%EB%8D%B0%EB%B7%94%20%EC%BD%98%EC%84%9C%ED%8A%B8" target="_blank">
+							<p>Detail</p>
+						</a>
+						<p>INE</p>
+					</div>
+				</div>
+
+				<div class="swiper-slide">
+					<a href="https://www.youtube.com/watch?v=0HcTddHouRo" target="_blank">
+						<img src="./source/img/consert/debut/JINGBURGER.jpg" alt="JINGBURGER">
+					</a>
+					<div class="text-area">
+						<a href="https://www.youtube.com/watch?v=0HcTddHouRo" target="_blank">
+							<p>Detail</p>
+						</a>
+						<p>JIGNBURGER</p>
+					</div>
+				</div>
+
+				<div class="swiper-slide">
+					<a href="https://vod.afreecatv.com/player/115972573" target="_blank">
+						<img src="./source/img/consert/debut/LILPA.jpg" alt="LILPA">
+					</a>
+					<div class="text-area">
+						<a href="https://namu.wiki/w/LILease" target="_blank">
+							<p>Detail</p>
+						</a>
+						<p>LILPA</p>
+					</div>
+				</div>
+
+				<div class="swiper-slide">
+					<a href="https://www.youtube.com/watch?v=udB06Jvizu4" target="_blank">
+						<img src="./source/img/consert/debut/JURURU.jpg" alt="JURURU">
+					</a>
+					<div class="text-area">
+						<a href="https://www.youtube.com/watch?v=udB06Jvizu4" target="_blank">
+							<p>Detail</p>
+						</a>
+						<p>JURURU</p>
+					</div>
+				</div>
+
+				<div class="swiper-slide">
+					<a href="https://vod.afreecatv.com/player/115986767" target="_blank">
+						<img src="./source/img/consert/debut/GOSEGU.jpg" alt="GOSEGU">
+					</a>
+					<div class="text-area">
+						<a href="https://namu.wiki/w/GOSEGU%20%EB%AF%B8%EB%8B%88%20%EC%BD%98%EC%84%9C%ED%8A%B8" target="_blank">
+							<p>Detail</p>
+						</a>
+						<p>GOSEGU</p>
+					</div>
+				</div>
+
+				<div class="swiper-slide">
+					<a href="https://www.youtube.com/watch?v=UIHoQ-4ts38&t=690s" target="_blank">
+						<img src="./source/img/consert/debut/VIICHAN.jpg" alt="VIICHAN">
+					</a>
+					<div class="text-area">
+						<a href="https://www.youtube.com/watch?v=UIHoQ-4ts38&t=690s" target="_blank">
+							<p>Detail</p>
+						</a>
+						<p>VIICHAN</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<!--CONSERT-->
+	<h1>- CONSERT -</h1>
+	<div class="consert">
+		<section class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<a href="https://www.youtube.com/watch?v=aCa5qn11IrI" target="_blank">
+						<img src="./source/img/consert/main/ine_everPurple.png" alt="INE_CONSERT">
+					</a>
+					<div class="text-area">
+						<a href="https://namu.wiki/w/EVER%20PURPLE" target="_blank">
+							<p>Detail</p>
+						</a>
+						<p>INE - Ever Purple</p>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<a href="https://www.youtube.com/watch?v=SLa8fe1Z2XE&feature=youtu.be" target="_blank">
+						<img src="./source/img/consert/main/lilpa_dreamAgain.png" alt="LILPA_CONSERT">
+					</a>
+					<div class="text-area">
+						<a href="https://namu.wiki/w/Dream%20Again(%EC%BD%98%EC%84%9C%ED%8A%B8)" target="_blank">
+							<p>Detail</p>
+						</a>
+						<p>LILPA - Dream Again</p>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<a href="#">
+						<img src="./source/img/consert/main/lilpa_goingout.png" alt="LILPA_CONSERT">
+					</a>
+					<div class="text-area">
+						<a href="https://namu.wiki/w/LILPACON%20:%20Going%20Out%20-%20SOOPER%20CONCERT" target="_blank">
+							<p>Detail</p>
+						</a>
+						<p>LILPA - Going Out</p>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<a href="https://www.youtube.com/watch?v=wmbN3BPIUbQ" target="_blank">
+						<img src="./source/img/consert/main/jururu_jutaime.png" alt="JURURU_CONSERT">
+					</a>
+					<div class="text-area">
+						<a href="https://namu.wiki/w/Ju.%20T'aime" target="_blank">
+							<p>Detail</p>
+						</a>
+						<p>JURURU - Ju Taime</p>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<a href="https://www.youtube.com/watch?v=78_SbCuAhxA" target="_blank">
+						<img src="./source/img/consert/main/gesegu_tour.png" alt="GOSEGU_CONSERT">
+					</a>
+					<div class="text-area">
+						<a href="https://namu.wiki/w/TOUR" target="_blank">
+							<p>Detail</p>
+						</a>
+						<p>GOSEGU - Tour</p>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<a href="https://www.youtube.com/watch?v=Ip1WwW0gwf4" target="_blank">
+						<img src="./source/img/consert/main/viichan_역광.png" alt="VIICHAN_CONSERT">
+					</a>
+					<div class="text-area">
+						<a href="https://namu.wiki/w/%EC%97%AD%EA%B4%91(%EC%BD%98%EC%84%9C%ED%8A%B8)" target="_blank">
+							<p>Detail</p>
+						</a>
+						<p>VIICHAN - Back Light</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
 	<!-- FOOTER -->
 	<footer>
 		<section>
 			<ul class="socials">
-			<li>
+				<li>
 					<a href="#" class="bx bxl-whatsapp"></a>
 					<p>010 - 5657 - 4813</p>
 				</li>
@@ -254,12 +416,12 @@
 					<p>Github</p>
 				</li>
 				<li style="width: 6rem;">
-					<a href="https://www.notion.so/Study-7daa8a57d33946b79616df556f0edd01"  target="_blank"><img src="./source/img/Notion-logo.png" alt="#"></a>
+					<a href="https://www.notion.so/Study-7daa8a57d33946b79616df556f0edd01" target="_blank"><img src="./source/img/Notion-logo.png" alt="#"></a>
 					<p>Notion</p>
 				</li>
 			</ul>
 			<ul class="links">
-				<li><a href="main.php">Home</a></li>
+				<li><a href="main.php">Main</a></li>
 				<li><a href="goods.php">Goods</a></li>
 				<li><a href="song.php">Song</a></li>
 			</ul>

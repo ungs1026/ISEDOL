@@ -53,3 +53,15 @@ window.onclick = function (event) {
     modal.style.display = 'none';
   }
 }
+
+// Swiper.js 초기화
+var swiper = new Swiper('.swiper-container', {
+  slidesPerView: 3,  // 한 화면에 보이는 슬라이드 수
+  spaceBetween: 20,  // 슬라이드 간격
+  loop: true,        // 무한 반복 설정
+  autoplay: {
+    delay: 4000,     // 자동 슬라이드 시간 (4000)
+    disableOnInteraction: false,  // 사용자가 스와이프 후에도 자동 슬라이드 계속
+    pauseOnMouseEnter: true,      // 마우스가 슬라이드 위에 있을 때 자동 재생 멈춤
+  },
+});

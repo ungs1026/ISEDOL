@@ -152,11 +152,11 @@ $jsonArray = json_encode($resultArray);
     }
     pauseSong();
 
-    
+
     $.post("includes/handlers/ajax/getSongJson.php", {
       songId: trackId
     }, function(data) {
-      
+
       var track = JSON.parse(data);
 
       $(".trackName span").text(track.title);
