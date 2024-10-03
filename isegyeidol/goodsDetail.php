@@ -30,7 +30,7 @@ $item = getData($pdo, $id);
 
 </head>
 
-<body>
+<body class="scrollbar">
 	<?php include 'includes/part/nav.php'; ?>
 	<main>
 		<section class="content-wrapper">

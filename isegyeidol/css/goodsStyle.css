@@ -271,7 +271,7 @@ input[type="radio"]:checked {
 	position: absolute;
 	top: 0;
 	top: 100%;
-	width: 208px;
+	width: 210px;
 	height: 100%;
 	background: rgba(151, 134, 224, 0.5) 0 no-repeat; /* 배경 이미지와 반투명 블러 */
 	background-size: 100px 20px; /* 배경 이미지의 크기를 조절합니다. */
@@ -297,7 +297,7 @@ input[type="radio"]:checked {
 
 /* 이미지 스타일 */
 .album-item img {
-	border-radius: 5px;
+	border-radius: 2rem;
 	width: 200px; /* 앨범 이미지 가로 크기 */
 	height: 200px; /* 앨범 이미지 세로 크기 */
 	object-fit: cover;
@@ -402,7 +402,11 @@ input[type="radio"]:checked {
 	flex-grow: 1;
 	gap: 10px;
 	justify-content: center;
-	margin-bottom: 30px;
+	margin-block: 30px;
+}
+
+.albums-content .main-img iframe {
+	border-radius: 2rem;
 }
 
 /*goods detail*/
@@ -420,6 +424,7 @@ input[type="radio"]:checked {
 	width: 20rem;
 	height: 20rem;
 	object-fit: cover;
+	border-radius: 2rem;
 	padding-right: 2rem;
 }
 
@@ -718,4 +723,18 @@ button:hover>a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* 스크롤바의 폭 너비 */
+.scrollbar::-webkit-scrollbar {
+	width: 10px;  
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+	background: #d46aff; /* 스크롤바 색상 */
+	border-radius: 10px; /* 스크롤바 둥근 테두리 */
+}
+
+.scrollbar::-webkit-scrollbar-track {
+	background: #f7dbff;  /*스크롤바 뒷 배경 색상*/
 }

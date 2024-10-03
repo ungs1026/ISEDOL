@@ -10,6 +10,7 @@ include('includes/getUserId.php');
 		</div>
 		<div class="nav-center">
 			<a href="main.php">MAIN</a>
+			<a href="groupsong.php">ALBUMS</a>
 			<a href="goods.php">GOODS</a>
 			<!-- <a href="board.php?page=1&code=freeboard">COMUNITY</a> -->
 			<span role='link' style="color: black; font-weight: bold;" tabindex='0' onclick='openPage("song.php")' class="navItemLink"><span>SONGS</span></span>

@@ -10,6 +10,7 @@
 		</div>
 		<div class="nav-center">
 			<a href="main.php">MAIN</a>
+			<a href="groupsong.php">ALBUMS</a>
 			<a href="goods.php">GOODS</a>
 			<!-- <a href="board.php?page=1&code=freeboard">COMUNITY</a> -->
 			<a href="song.php">SONGS</a>

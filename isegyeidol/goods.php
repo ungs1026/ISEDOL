@@ -34,8 +34,8 @@
 					<iframe width="533" height="300" src="https://www.youtube.com/embed/i4SRH9jfUMQ?si=E_VWzhVjbQhfrvPX?rel=0"
 						title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 						referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 				</div>
+				
 				<!-- 굿즈 그리드 -->
 				<div class="albums-grid"> <!-- 동일한 그리드 클래스 사용 -->
 					<?php

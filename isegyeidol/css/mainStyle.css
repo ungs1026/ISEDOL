@@ -324,7 +324,7 @@ label {
 	filter: drop-shadow(0 0 2px black);
 }
 
-.kidding .content .kid-left img:hover {
+.kidding .content .kid-left:hover img {
 	transform: rotateY(360deg);
 	transition: all 1.5s ease-in-out;
 }
@@ -349,8 +349,14 @@ label {
 .kidding .content .kid-right {
 	display: flex;
 	flex-direction: column;
-	padding-bottom: 3rem;
+	padding : 3rem;
 	gap: 2rem;
+}
+
+.kidding .content .kid-right:hover {
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 2rem;
+	transition: all 0.5s ease-in-out;
 }
 
 .kidding .content .kid-right img {
@@ -362,6 +368,12 @@ label {
 	display: flex;
 	align-items:center;
 	gap: 0.6rem;
+}
+
+.kidding .content .kid-right:hover .text-section .album-description {
+	letter-spacing: 0.07rem;
+	font-size: 0.9rem;
+	transition: all 0.5s ease;
 }
 
 .album-title {

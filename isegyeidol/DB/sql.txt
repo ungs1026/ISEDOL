@@ -208,3 +208,40 @@ insert into songs (title, artist, album, duration, path, albumOrder, songArt, pl
 ('유령도쿄', 6, 6, '3:24', 'source/music_group/6VIICHAN/viichan_유령도쿄.mp3', 6, 'source/music_group/6VIICHAN/viichan_유령도쿄.jpg', 0),
 ('플라스틱 러브', 6, 6, '4:51', 'source/music_group/6VIICHAN/viichan_플라스틱_러브.mp3', 6, 'source/music_group/6VIICHAN/viichan_플라스틱_러브.jpg', 0),
 ('나는 아픈 건 딱 질색이니까', 6, 6, '2:44', 'source/music_group/6VIICHAN/viichan_나는_아픈_건_딱_질색이니까.mp3', 6, 'source/music_group/6VIICHAN/viichan_나는_아픈_건_딱_질색이니까.jpg', 0);
+
+-- group
+create table groups (
+	id int(11) not null auto_increment,
+	name varchar(50) not null,
+	thumbnail varchar(255) not null,
+	date date not null,
+	year varchar(20) not null,
+	kind varchar(50) not null,
+	youtube varchar(500) not null,
+	primary key(id)
+);
+
+-- insert
+
+-- Single
+insert into groups (name, thumbnail, date, year, kind, youtube) values
+('Re: WIND', 'source/img/single/REWIND.png', '2021-12-17', '2021', 'single', 'https://www.youtube.com/watch?v=fgSXAKsq-Vo'),
+('겨울봄', 'source/img/single/겨울봄.png', '2022-03-11', '2022', 'single', 'https://www.youtube.com/watch?v=JY-gJkMuJ94'),
+('KIDDING', 'source/img/single/KIDDING.png', '2022-08-18', '2022', 'single', 'https://www.youtube.com/watch?v=rDFUl2mHIW4'),
+('LOCKDOWN', 'source/img/single/LOCKDOWN.png', '2023-06-22', '2023', 'single', 'https://www.youtube.com/watch?v=QgMFpuos4Rg'),
+('Another World', 'source/img/single/Another World.png', '2023-07-21', '2023', 'single', 'https://www.youtube.com/watch?v=8KTFf2X-ago'),
+('Super Hero', 'source/img/single/Super Hero.png', '2023-09-24', '2023', 'single', 'https://www.youtube.com/watch?v=wyhwJnNpVJI'),
+('OVER', 'source/img/single/OVER.png', '2023-09-24', '2023', 'single', 'https://www.youtube.com/watch?v=i4SRH9jfUMQ'),
+('But You Want More', 'source/img/single/But You Want More.png', '2022-02-15', '2022', 'single', 'https://www.youtube.com/watch?v=VcvMQ9MZhF8'),
+('이세돌 싸이퍼', 'source/img/single/이세돌 싸이퍼.png', '2022-04-23', '2022', 'single', 'https://www.youtube.com/watch?v=Empfi8q0aas');
+
+-- COVER
+insert into groups (name, thumbnail, date, year, kind, youtube) values
+('장난기 기능', 'source/img/cover/장난기기능.png', '2021-09-13', '2021', 'cover', 'https://www.youtube.com/watch?v=fU8picIMbSk'),
+('투니버스 메들리', 'source/img/cover/투니버스 메들리.png', '2021-12-05', '2021', 'cover', 'https://www.youtube.com/watch?v=OTkFJyn4mvc'),
+('Its Beginning To Look A Lot Like Christmas', 'source/img/cover/Its Beginning To Look A Lot Like Christmas.png', '2021-12-23', '2021', 'cover', 'https://www.youtube.com/watch?v=kNPykP_9wOQ'),
+('My WAKTAVERSE', 'source/img/cover/My WAKTAVERSE.png', '2021-12-27', '2021', 'cover', 'https://www.youtube.com/watch?v=Kc85nOaqLwo'),
+('우마뾰이 전설', 'source/img/cover/우마뾰이 전설.png', '2022-08-23', '2022', 'cover', 'https://www.youtube.com/watch?v=TYB9ScXvq34'),
+('풍선', 'source/img/cover/풍선.png', '2022-08-28', '2022', 'cover', 'https://www.youtube.com/watch?v=21trg6DfzX8'),
+('LOVE DIVE', 'source/img/cover/LOVE DIVE.png', '2022-09-05', '2022', 'cover', 'https://www.youtube.com/watch?v=Brf3LWwNVTk'),
+('Kissing You', 'source/img/cover/Kissing You.png', '2024-03-20', '2024', 'cover', 'https://www.youtube.com/watch?v=OrFyzG5yTC4');
