@@ -17,7 +17,9 @@
     - [Goods Detail Page](#goods-detail-page)
     - [Song Page](#song-page)
     - [Song Artist Page](#song-artist-page)
+    - [Album Page](#album-page)
 - [**Caution**](#caution)
+- [**Patch Notes**](#patch-notes)
 - [**Contact**](#contact)
 
 <hr>
@@ -28,18 +30,29 @@
 - 공부한 php와 DataBase를 이용하여 진행한 프로젝트를 결합시켜 Fansite를 완성시켰습니다.
 
 ### **Page Information**
-- Register Page에서 Login 및 Sign up을 통해 Main Page로 진입이 가능합니다.
-- Main Page에서는 멤버의 단체 팬아트, SNS, 최신 앨범, 데뷔 및 콘서트 방송에 대해 알 수 있습니다.
-- Goods Page의 경우 최신 단체곡 및 굿즈의 정보를 정렬 및 확인할 수 있습니다.
-- Goods Detail Page의 경우 제품의 상세정보, 배송, 반품 / 교환에 대해 알 수 있습니다.
-- Song Page의 경우 각 멤버 별 DB에 등록된 노래 및 하단 PlayBar를 통해 Music Play가 가능합니다.
-- Song Artist Page의 경우 해당 맴버의 Playlist 실행, id값을 통한 노래 5가지, Album Art를 확인할 수 있습니다.
+- **Register Page**에서 Login 및 Sign up을 통해 Main Page로 진입이 가능합니다.
+- **Main Page**에서는 멤버의 단체 팬아트, SNS, 최신 앨범, 데뷔 및 콘서트 방송에 대해 알 수 있습니다.
+- **Goods Page**의 경우 최신 단체곡 및 굿즈의 정보를 정렬 및 확인할 수 있습니다.
+- **Goods Detail Page**의 경우 제품의 상세정보, 배송, 반품 / 교환에 대해 알 수 있습니다.
+- **Song Page**의 경우 각 멤버 별 DB에 등록된 노래 및 하단 PlayBar를 통해 Music Play가 가능합니다.
+- **Song Artist Page**의 경우 해당 맴버의 Playlist 실행, id값을 통한 노래 5가지, Album Art를 확인할 수 있습니다.
+- **Album Page**의 경우 Sidebar의 정렬 기능 및 검색기능, 상단의 싱글앨범 1집부터 3집 영상, Single곡과 Cover곡을 확인할 수 있습니다.
 
 ### **Features**
 - 기본적인 사이트의 구조에 대해 정리하였습니다.
 - PHP를 이용한 SESSION의 사용 및 DB를 이용하기 위한 SQL정보 및 Data 구조를 확인할 수 있습니다.
 -> SQL의 경우 DB/sql.txt를 통해 확인할 수 있습니다.
 - PHP를 이용한 변동되지 않는 부분의 고정 및 MainCotent 수정 방법을 확인할 수 있습니다.
+- 스크롤 바의 경우 간단하게 색 변경 및 테두리 수정을 하였습니다.
+```
+/* 스크롤바의 폭 너비 */
+.scrollbar::-webkit-scrollbar { width: 10px; }
+.scrollbar::-webkit-scrollbar-thumb {
+	background: #d46aff; /* 스크롤바 색상 */
+	border-radius: 10px; /* 스크롤바 둥근 테두리 */
+}
+.scrollbar::-webkit-scrollbar-track { background: #f7dbff;  /*스크롤바 뒷 배경 색상*/ }
+```
 
 ### **Techniques**
 - [PHP]
@@ -162,11 +175,25 @@ if (isset($_GET['id'])) {
 -  **Song Artist Page**입니다. PlayBar에서 멤버의 이름을 클릭하는 경우 확인 할 수 있습니다.
 - 해당 멤버의 모든 노래 재생 및 index의 상단 5개의 노래 확인, Album Art 확인이 가능합니다.
 
+<br>
+
+### **Album Page**
+![Album Page](isegyeidol/readme_img/isedol_album.png)
+-  **Album Page**입니다. SideBar를 통해 정렬 및 년도별로 나온 곡들을 확인할 수 있습니다.
+-  ISEDOL 결성 이후 싱글 1집부터 3집, OST, Cover곡등을 발매일 순으로 또는 이름 검색으로 확인할 수 있습니다.
+-  이미지를 클릭하는 경우 해당 앨범의 유튜브 사이로 이동됩니다.
+
 <hr>
 
 <!-- 주의 -->
 ## Caution
 - 해당 프로젝트의 이미지는 네이버카페 ***왁물원***에 등록된 이세돌 팬아트입니다.
+- 상업적 이용을 금지합니다.
+
+<!-- 패치노트 -->
+## Patch Notes
+- 2024년 10월 2일 : 사이트 개발 정보 업로드 및 Readme File 내용 수정
+- 2024년 10월 3일 : Albums Page 추가 및 Scroll Bar 디자인 추가
 
 <!--접근-->
 ## **Contact**
