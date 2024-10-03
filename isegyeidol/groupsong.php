@@ -19,7 +19,7 @@ include('includes/getUserId.php');
 	<script defer src="./js/group.js"></script>
 </head>
 
-<body>
+<body class="scrollbar">
 	<?php include './includes/part/nav.php'; ?>
 
 	<main>

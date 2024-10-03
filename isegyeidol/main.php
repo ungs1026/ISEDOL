@@ -34,7 +34,7 @@
 	<script defer src="./js/main.js"></script>
 </head>
 
-<body>
+<body class="scrollbar">
 
 	<?php
 	include('includes/part/nav.php');

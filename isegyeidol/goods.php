@@ -17,7 +17,7 @@
 	<script defer src="./js/script.js"></script>
 </head>
 
-<body>
+<body class="scrollbar">
 	<?php include './includes/part/nav.php'; ?>
 	<main>
 		<section class="content-wrapper">

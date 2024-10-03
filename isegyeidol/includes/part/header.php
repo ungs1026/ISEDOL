@@ -16,7 +16,7 @@ include("includes/classes/Song.php");
   <script src="js/songScript.js"></script>
 </head>
 
-<body>
+<body class="scrollbar">
 
   <div id="mainContainer">
 

@@ -390,3 +390,17 @@ input[type="radio"]:checked {
 .albums-content .main-img iframe {
 	border-radius: 2rem;
 }
+
+/* 스크롤바의 폭 너비 */
+.scrollbar::-webkit-scrollbar {
+	width: 10px;  
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+	background: #d46aff; /* 스크롤바 색상 */
+	border-radius: 10px; /* 스크롤바 둥근 테두리 */
+}
+
+.scrollbar::-webkit-scrollbar-track {
+	background: #f7dbff;  /*스크롤바 뒷 배경 색상*/
+}
