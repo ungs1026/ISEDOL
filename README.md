@@ -25,11 +25,11 @@
 <hr>
 
 <!--프로젝트 설명-->
-## **Project**
+## 📁**Project**
 - 해당 프로젝트는 인터넷 방송인 그룹 **ISEGYE IDOL**의 정보 및 굿즈, MusicPlay를 목적으로 하였습니다.
 - 공부한 php와 DataBase를 이용하여 진행한 프로젝트를 결합시켜 Fansite를 완성시켰습니다.
 
-### **Page Information**
+### 💡**Page Information**
 - **Register Page**에서 Login 및 Sign up을 통해 Main Page로 진입이 가능합니다.
 - **Main Page**에서는 멤버의 단체 팬아트, SNS, 최신 앨범, 데뷔 및 콘서트 방송에 대해 알 수 있습니다.
 - **Goods Page**의 경우 최신 단체곡 및 굿즈의 정보를 정렬 및 확인할 수 있습니다.
@@ -54,7 +54,7 @@
 .scrollbar::-webkit-scrollbar-track { background: #f7dbff;  /*스크롤바 뒷 배경 색상*/ }
 ```
 
-### **Techniques**
+### 💻**Techniques**
 - [PHP]
 - [phpMyAdmin]
 - [SQL]
@@ -186,17 +186,17 @@ if (isset($_GET['id'])) {
 <hr>
 
 <!-- 주의 -->
-## 🚧Caution
+## 🚧**Caution**
 - 해당 프로젝트의 이미지는 네이버카페 ***왁물원***에 등록된 이세돌 팬아트입니다.
 - 상업적 이용을 금지합니다.
 
 <!-- 패치노트 -->
-## Patch Notes
+## 📒**Patch Notes**
 - 2024년 10월 2일 : 사이트 개발 정보 업로드 및 Readme File 내용 수정
 - 2024년 10월 3일 : Albums Page 추가 및 Scroll Bar 디자인 추가
 
 <!--접근-->
-## **Contact**
+## 📫**Contact**
 - 📧  **wodnd565@gmail.com**
 - 📞  **010 - 5657 - 4813**
 
