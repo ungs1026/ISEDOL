@@ -30,6 +30,7 @@
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
+	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./css/mainStyle.css">
 	<script defer src="./js/main.js"></script>
 </head>
@@ -212,6 +213,7 @@
 		<div class="content">
 			<div class="kid-left">
 				<img src="./source/img/kidding.jpg" alt="kidding-Album">
+				<img src="./source/img/single/KIDDING.png" alt="kidding-Album" class="cover-overlay">
 				<button id="openModalBtn">lyrics</button>
 			</div>
 			<div class="kid-right">
@@ -400,34 +402,9 @@
 	</div>
 
 	<!-- FOOTER -->
-	<footer>
-		<section>
-			<ul class="socials">
-				<li>
-					<a href="#" class="bx bxl-whatsapp"></a>
-					<p>010 - 5657 - 4813</p>
-				</li>
-				<li>
-					<a href="#" class="bx bxl-gmail"></a>
-					<p>wodnd565@gmail.com</p>
-				</li>
-				<li style="width: 6rem;">
-					<a href="https://github.com/ungs1026" class="bx bxl-github" target="_blank"></a>
-					<p>Github</p>
-				</li>
-				<li style="width: 6rem;">
-					<a href="https://www.notion.so/Study-7daa8a57d33946b79616df556f0edd01" target="_blank"><img src="./source/img/Notion-logo.png" alt="#"></a>
-					<p>Notion</p>
-				</li>
-			</ul>
-			<ul class="links">
-				<li><a href="main.php">Main</a></li>
-				<li><a href="goods.php">Goods</a></li>
-				<li><a href="song.php">Song</a></li>
-			</ul>
-			<p class="legal"> © 2024 rights reserved </p>
-		</section>
-	</footer>
+	<?php
+	include 'includes/part/infoFooter.php';
+	?>
 
 	<!-- MODAL -->
 	<div id="modal" class="modal">

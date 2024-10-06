@@ -5,7 +5,8 @@ if (session_status() === PHP_SESSION_NONE) {
 	session_start(); // 세션 시작
 } 
 
-$userId = isset($_SESSION['userId']) && $_SESSION['userId'] != '' ? $_SESSION['userId'] : '';
+
+$userId = isset($_SESSION['userId']) && $_SESSION['userId'] != '' ? $_SESSION['userId'] : 0;
 $query = "select * from users where id=$userId";
 try {
 	$stmt = $pdo->prepare($query);

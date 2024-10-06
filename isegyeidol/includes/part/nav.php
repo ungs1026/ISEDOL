@@ -19,6 +19,9 @@
 			<!--nav right section-->
 			<img src="<?= $user['profilePic']?>" alt="profilePic">
 			<span class="user"><?= $user['username'] ?></span>
+
+			<p><button id="btn-login" onclick="location.href='register.php'">LogIn</button></p>
+			<p><button id="btn-logout" onclick="location.href='includes/handlers/ajax/logout.php'">LogOut</button></p>
 		</div>
 	</nav>
 

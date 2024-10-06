@@ -8,7 +8,7 @@
 		$formAction = ($currentPage === 'groupsong.php') ? 'groupsong.php' : '1';
 		?>
 
-		<!-- 정렬 방법 -->
+		<!-- sort 방법 -->
 		<form id="filter-form" action="<?php echo $formAction; ?>" method="get">
 			<div class="filter-section">
 				<h3>Sort By</h3>
@@ -21,17 +21,30 @@
 					<label for="sort-new">Newest</label>
 				</div>
 				<div class="filter-option">
-					<input type="radio" id="sort-single" name="sort" value="single">
-					<label for="sort-single">single</label>
+					<input type="radio" id="sort-old" name="sort" value="old">
+					<label for="sort-old">Oldest</label>
+				</div>
+			</div>
+
+			<!-- Types 선택 -->
+			<div class="types-filter">
+				<h3>Types</h3>
+				<div class="filter-option">
+					<input type="radio" id="type-all" name="type" value="all" checked>
+					<label for="type-all">All</label>
 				</div>
 				<div class="filter-option">
-					<input type="radio" id="sort-cover" name="sort" value="cover">
-					<label for="sort-cover">cover</label>
+					<input type="radio" id="type-single" name="type" value="single">
+					<label for="type-single">single</label>
+				</div>
+				<div class="filter-option">
+					<input type="radio" id="type-cover" name="type" value="cover">
+					<label for="type-cover">cover</label>
 				</div>
 			</div>
 
 			<!-- Year 선택 -->
-			<div class="production-filter">
+			<div class="kind-filter">
 				<h3>Years</h3>
 				<div class="filter-option">
 					<input type="radio" id="year-all" name="year" value="all" checked>

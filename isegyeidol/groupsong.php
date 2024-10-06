@@ -14,7 +14,12 @@ include('includes/getUserId.php');
 	<link rel="icon" href="source/img/main-logo.png" type="image/x-icon" />
 	<link rel="shortcut icon" href="source/img/main-logo.png" type="image/x-icon" />
 
+	<!--BoxIcons-->
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+	<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
 	<!--Include Local Script-->
+	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./css/group.css">
 	<script defer src="./js/group.js"></script>
 </head>
@@ -71,17 +76,17 @@ include('includes/getUserId.php');
 				<!-- 페이지네이션 -->
 				<div class="pagination">
 					<?php if ($currentPage > 1): ?>
-						<a href="groupsong.php?page=<?php echo $currentPage - 1; ?><?php echo isset($_GET['sort']) ? '&sort=' . $_GET['sort'] : ''; ?><?php echo isset($_GET['search']) ? '&search=' . urlencode($_GET['search']) : ''; ?>">&laquo; Previous</a>
+						<a href="groupsong.php?page=<?php echo $currentPage - 1; ?><?php echo isset($_GET['sort']) ? '&sort=' . $_GET['sort'] : ''; ?><?php echo isset($_GET['type']) ? '&type=' . $_GET['type'] : ''; ?><?php echo isset($_GET['year']) ? '&year=' . $_GET['year'] : ''; ?><?php echo isset($_GET['search']) ? '&search=' . urlencode($_GET['search']) : ''; ?>">&laquo; Previous</a>
 					<?php endif; ?>
 
 					<?php for ($i = 1; $i <= $totalPages; $i++): ?>
-						<a href="groupsong.php?page=<?php echo $i; ?><?php echo isset($_GET['sort']) ? '&sort=' . $_GET['sort'] : ''; ?><?php echo isset($_GET['search']) ? '&search=' . urlencode($_GET['search']) : ''; ?>" <?php echo $i == $currentPage ? 'class="active"' : ''; ?>>
+						<a href="groupsong.php?page=<?php echo $i; ?><?php echo isset($_GET['sort']) ? '&sort=' . $_GET['sort'] : ''; ?><?php echo isset($_GET['type']) ? '&type=' . $_GET['type'] : ''; ?><?php echo isset($_GET['year']) ? '&year=' . $_GET['year'] : ''; ?><?php echo isset($_GET['search']) ? '&search=' . urlencode($_GET['search']) : ''; ?>" <?php echo $i == $currentPage ? 'class="active"' : ''; ?>>
 							<?php echo $i; ?>
 						</a>
 					<?php endfor; ?>
 
 					<?php if ($currentPage < $totalPages): ?>
-						<a href="groupsong.php?page=<?php echo $currentPage + 1; ?><?php echo isset($_GET['sort']) ? '&sort=' . $_GET['sort'] : ''; ?><?php echo isset($_GET['search']) ? '&search=' . urlencode($_GET['search']) : ''; ?>">Next &raquo;</a>
+						<a href="groupsong.php?page=<?php echo $currentPage + 1; ?><?php echo isset($_GET['sort']) ? '&sort=' . $_GET['sort'] : ''; ?><?php echo isset($_GET['type']) ? '&type=' . $_GET['type'] : ''; ?><?php echo isset($_GET['year']) ? '&year=' . $_GET['year'] : ''; ?><?php echo isset($_GET['search']) ? '&search=' . urlencode($_GET['search']) : ''; ?>">Next &raquo;</a>
 					<?php endif; ?>
 				</div>
 
@@ -89,6 +94,9 @@ include('includes/getUserId.php');
 		</section>
 	</main>
 
+	<?php
+		include 'includes/part/infoFooter.php';
+	?>
 </body>
 
 </html>

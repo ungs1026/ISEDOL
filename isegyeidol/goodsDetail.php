@@ -25,6 +25,7 @@ $item = getData($pdo, $id);
 	<link rel="icon" href="source/img/main-logo.png" type="image/x-icon" />
   <link rel="shortcut icon" href="source/img/main-logo.png" type="image/x-icon"/>
 	
+	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./css/goodsStyle.css">
 	<script defer src="./js/topscroll.js"></script>
 

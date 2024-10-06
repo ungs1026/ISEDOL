@@ -1,132 +1,3 @@
-/*English*/
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
-@import url('https://fonts.googleapis.com/css?family=Kode Mono');
-@import url('https://fonts.googleapis.com/css?family=ADLaM Display');
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap');
-
-/*Korean*/
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
-
-* {
-	font-family: 'ADLaM Display', sans-serif;
-	font-weight: bold;
-	font-size: 1rem;
-}
-
-body {
-	padding: 0;
-	margin: 0;
-	overflow-x: hidden;
-}
-
-nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 100%;
-	padding: 0 2rem;
-}
-
-header {
-	position: fixed;
-	top: 0;
-	width: 100%;
-	height: 6rem;
-	background-color: #ffffff;
-	/* Optional: background color */
-	z-index: 2000;
-	/* Ensure it stays on top */
-	transition: box-shadow 0.3s ease;
-	/* 그림자 효과 부드럽게 */
-	padding-top: 10px;
-}
-
-header.scrolled {
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	/* 그림자 추가 */
-}
-
-a {
-	text-decoration-line: none;
-}
-
-h1 {
-	text-align: center;
-	font-size: 1.4rem;
-}
-/*=================nav=================*/
-
-.nav-left {
-	flex: 1;
-}
-
-.nav-left .logo {
-	height: 80px;
-	object-fit: contain;
-	filter: drop-shadow(0 0 1px black);
-}
-
-.nav-center {
-	flex: 2;
-	display: flex;
-	justify-content: center;
-	gap: 4rem;
-}
-
-.nav-center a {
-	color: black;
-	text-decoration: none;
-	font-size: 1.3rem;
-	font-weight: 700;
-	font-style: normal;
-	transition: color 0.3s ease;
-}
-
-.nav-center a:hover {
-	color: #c4baf4;
-}
-
-.nav-right {
-	flex: 1;
-	display: flex;
-	align-items: center;
-	gap: 0.8rem;
-	justify-content: flex-end;
-}
-
-.nav-right img {
-	width: 30px;
-	height: 30px;
-	object-fit: contain;
-	border-radius: 50%;
-	filter: drop-shadow(0 0 2px black);
-}
-
-.nav-right .user {
-	text-transform: uppercase;
-	font-weight: bold;
-	font-size: 1.3rem;
-}
-/* 레이블 스타일 */
-label {
-	font-family: 'ADLaM Display';
-	font-weight: 700;
-	text-transform: uppercase;
-}
-
-/* 네비게이션 바와 본문 영역 사이의 파란색 선 */
-.nav-separator {
-	height: 3px;
-	background-color: rgb(148, 83, 148);
-	min-width: 100%;
-	position: absolute;
-	z-index: 10;
-}
-
-
 /*===========================regular event=======================*/
 /*event*/
 .event {
@@ -317,16 +188,33 @@ label {
 	gap: 1rem;
 }
 
-.kidding .content .kid-left img {
+.kid-left img {
 	width: 100%;
-	object-fit: cover;
-	border-radius: 2rem;
-	filter: drop-shadow(0 0 2px black);
+	height: 100%;
+	transition: transform 0.6s ease;
 }
 
-.kidding .content .kid-left:hover img {
-	transform: rotateY(360deg);
-	transition: all 1.5s ease-in-out;
+.kid-left .cover-overlay {
+	position: absolute;
+	width: 22rem;
+	height: 22rem;
+	margin-left: 4rem;
+	margin-top:  0.25rem;
+	opacity: 0;
+	transition: opacity 0.6s ease, transform 0.6s ease;
+	transform: rotate(0deg);
+}
+
+.kid-left:hover img {
+	opacity: 0;
+	transform: rotate(-360deg); /* 이미지 360도 회전 */
+	transition: all 1s ease-in-out;
+}
+
+.kid-left:hover .cover-overlay {
+	opacity: 1; /* 이미지 보이기 */
+	transform: rotate(360deg); /* 회전하면서 보이게 하기 */
+	transition: all 1s ease-in-out;
 }
 
 .kidding .content .kid-left button {
@@ -549,95 +437,6 @@ label {
 	flex-grow: 3;
 }
 
-/*===========================FOOTER===========================*/
-ul {
-	display: flex;
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-.socials {
-	gap: 20px;
-}
-
-.socials li {
-	width: 7.8rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-}
-
-.socials li {
-	transition: all 0.5s;
-	margin-bottom: 18px;
-	margin-top: 15px;
-}
-
-.socials li:hover {
-	margin-top: -15px;
-}
-
-.socials li a {
-	color: gray;
-}
-
-.socials li p {
-	font-size: 0.7rem;
-}
-
-.socials li a>img {
-	width: 16px;
-	filter: invert(100%);
-	margin-top: 0.1rem;
-}
-
-.links {
-	transform: scale(1);
-	cursor: pointer;
-	transition: all 0.5s;
-}
-
-.links li a {
-	font-size: 1rem;
-	color: gray;
-}
-
-.links li:hover,
-.links li a:hover{
-	transform: scale(1.3);
-	color: white;
-	transition: all 0.5s ease;
-}
-
-.legal {
-	font-size: 12px;
-	margin: 0;
-}
-
-footer {
-	position: relative;
-	left: 0;
-	bottom: 0;
-	display: flex;
-	width: 100%;
-	height: 230px;
-	background-color: #000;
-}
-
-section {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	gap: 30px;
-	padding-bottom: 50px;
-	padding-left: 60px;
-	width: 100%;
-	color: white;
-}
-
 @media (width > 420px) {
 	section {
 		align-items: center;
@@ -649,18 +448,4 @@ section {
 		gap: 60px;
 		flex-direction: row;
 	}
-}
-
-/* 스크롤바의 폭 너비 */
-.scrollbar::-webkit-scrollbar {
-	width: 10px;  
-}
-
-.scrollbar::-webkit-scrollbar-thumb {
-	background: #d46aff; /* 스크롤바 색상 */
-	border-radius: 10px; /* 스크롤바 둥근 테두리 */
-}
-
-.scrollbar::-webkit-scrollbar-track {
-	background: #f7dbff;  /*스크롤바 뒷 배경 색상*/
 }

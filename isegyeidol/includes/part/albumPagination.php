@@ -10,36 +10,37 @@ $page = $page > 0 ? $page : 1;
 $offset = ($page - 1) * $songsPerPage;
 
 // 기본 쿼리
-$query = "SELECT * FROM groups";
+$query = "SELECT * FROM groups WHERE 1=1"; // 기본적으로 모든 레코드를 선택하기 위해 WHERE 1=1 사용
 
 // 필터 및 정렬 기능 추가
 $sort = isset($_GET['sort']) ? $_GET['sort'] : 'all';
+$type = isset($_GET['type']) ? $_GET['type'] : 'all';
 $year = isset($_GET['year']) ? $_GET['year'] : 'all';
 $search = isset($_GET['search']) ? $_GET['search'] : '';
 
+$bindings = []; // 바인딩할 값을 저장하는 배열
+
+if ($type != 'all') {
+    $query .= " AND kind = :type";
+    $bindings[':type'] = $type; // 바인딩 배열에 추가
+}
+
 if ($year != 'all') {
-    $query .= " WHERE year = :year";
-		if($year == "2021"){
-			$year = "2021";
-		} else if ($year == "2022") {
-			$year = "2022";
-		} else if ($year == "2023") {
-			$year = "2023";
-		} else if ($year == "2024") {
-			$year = "2024";
-		}
+    $query .= " AND year = :year";
+    $bindings[':year'] = $year; // 바인딩 배열에 추가
 }
+
 if (!empty($search)) {
-    $query .= ($year != 'all' ? " AND" : " WHERE") . " name LIKE :search";
+    $query .= " AND name LIKE :search";
+    $bindings[':search'] = '%' . $search . '%'; // 바인딩 배열에 추가
 }
-if ($sort == 'all') {
-    $query .= " ORDER BY id";
-} else if ($sort == 'new') {
+
+if ($sort == 'new') {
     $query .= " ORDER BY date DESC";
-} else if ($sort == 'single') {
-	$query .= " where kind= 'single'";
-} else if ($sort == 'cover') {
-	$query .= " where kind= 'cover'";
+} else if ($sort == 'old') {
+    $query .= " ORDER BY date";
+} else {
+    $query .= " ORDER BY id"; // 기본 정렬
 }
 
 // 페이지네이션 적용
@@ -47,14 +48,15 @@ $query .= " LIMIT :limit OFFSET :offset";
 
 try {
     $stmt = $pdo->prepare($query);
-    if ($year != 'all') {
-        $stmt->bindParam(':year', $year);
+    
+    // 동적으로 바인딩된 값 추가
+    foreach ($bindings as $key => $value) {
+        $stmt->bindValue($key, $value);
     }
-    if (!empty($search)) {
-        $stmt->bindValue(':search', '%' . $search . '%');
-    }
+    // LIMIT 및 OFFSET 바인딩
     $stmt->bindValue(':limit', $songsPerPage, PDO::PARAM_INT);
     $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+    
     $stmt->execute();
     $songs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
@@ -63,22 +65,28 @@ try {
 }
 
 // 총 굿즈 수를 계산하기 위한 쿼리
-$countQuery = "SELECT COUNT(*) FROM groups";
-if ($year != 'all') {
-    $countQuery .= " WHERE year = :year";
+$countQuery = "SELECT COUNT(*) FROM groups WHERE 1=1"; // 기본적으로 모든 레코드를 선택하기 위해 WHERE 1=1 사용
+
+if ($type != 'all') {
+    $countQuery .= " AND kind = :type";
 }
+
+if ($year != 'all') {
+    $countQuery .= " AND year = :year";
+}
+
 if (!empty($search)) {
-    $countQuery .= ($year != 'all' ? " AND" : " WHERE") . " name LIKE :search";
+    $countQuery .= " AND name LIKE :search";
 }
 
 try {
     $countStmt = $pdo->prepare($countQuery);
-    if ($year != 'all') {
-        $countStmt->bindParam(':year', $year);
+    
+    // 동적으로 바인딩된 값 추가
+    foreach ($bindings as $key => $value) {
+        $countStmt->bindValue($key, $value);
     }
-    if (!empty($search)) {
-        $countStmt->bindValue(':search', '%' . $search . '%');
-    }
+    
     $countStmt->execute();
     $totalCount = $countStmt->fetchColumn();
     $totalPages = ceil($totalCount / $songsPerPage);

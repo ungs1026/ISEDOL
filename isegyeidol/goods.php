@@ -13,6 +13,11 @@
 	<link rel="icon" href="source/img/main-logo.png" type="image/x-icon" />
   <link rel="shortcut icon" href="source/img/main-logo.png" type="image/x-icon"/>
 
+	<!--BoxIcons-->
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+	<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./css/goodsStyle.css">
 	<script defer src="./js/script.js"></script>
 </head>
@@ -84,6 +89,9 @@
 		</section>
 	</main>
 
+	<?php
+		include 'includes/part/infoFooter.php';
+	?>
 </body>
 
 </html>
