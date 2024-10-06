@@ -55,7 +55,7 @@
 ```
 
 ### 💻**Techniques**
-- [PHP]
+- [PHP (7.4.33 ver)]
 - [phpMyAdmin]
 - [SQL]
 - [HTML5], [CSS3], [JavaScript]
