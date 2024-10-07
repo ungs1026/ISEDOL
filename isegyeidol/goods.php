@@ -19,7 +19,6 @@
 
 	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./css/goodsStyle.css">
-	<script defer src="./js/script.js"></script>
 </head>
 
 <body class="scrollbar">

@@ -8,13 +8,14 @@ if(isset($_POST['loginButton'])) {
 
 	$con = mysqli_connect("localhost", "root", "", "isegyeidol");
 	$sql = "select * from users where username='$username'";
-	$result1 = mysqli_query($con, $sql);
-	$row = mysqli_fetch_array($result1);
+	$res = mysqli_query($con, $sql);
+	$row = mysqli_fetch_array($res);
 
 	if($result == true) {
-			$id = $row[0]['id'];
-			$_SESSION['userId'] = $id;
+		if(is_numeric($row[0]['id'])){
+			$_SESSION['userId'] = $row[0]['id'];
 			header("Location: main.php");
+		}
 	}
 }
 ?>

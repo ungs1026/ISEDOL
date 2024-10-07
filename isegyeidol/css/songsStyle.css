@@ -407,15 +407,18 @@ body {
 }
 
 #mainViewContainer {
-  margin-left: 220px;
-  padding-top: 100px;
-  padding-bottom: 90px;
-  width: calc(100% - 220px);
+  width: 100%;
+	padding-block: 8rem;
 }
 
 #mainContent {
-  width: inherit;
+  width: 100%;
+}
 
+.song-main {
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 .pageHeadingBig {
@@ -426,12 +429,9 @@ body {
 .gridViewItem {
   left: 4%;
   position: relative;
-  display: inline-block;
-  margin-right: 65px;
-  width: 20%;
-  max-width: 180px;
-  min-width: 150px;
-  margin-bottom: 20px;
+  display: flex;
+  width: 100%;
+	justify-content:center;
 }
 
 .gridViewItem img {
@@ -503,13 +503,14 @@ body {
 }
 
 .tracklist {
-  padding: 0;
+  padding-inline: 10rem;
 }
 
 .tracklistRow {
+	width: inherit;
   height: 40px;
   padding: 1rem 1rem;
-	border-radius: 1.5rem;
+border-radius: 1.5rem;
   list-style: none;
 }
 
@@ -627,9 +628,26 @@ body {
 }
 
 .gridViewContainer {
-  width: 100%;
+  width: 80%;
+	display: grid;
+	left:0;
+	grid-auto-flow: column;
+	place-items: center;
 	height: 70vh;
 	align-content: center;
+}
+
+.artist-main .gridViewContainer {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	height: inherit;
+}
+
+.artist-main .gridViewContainer .gridViewItem {
+	width: 90%;
+	margin-top: 4rem;
+	margin-right: 10rem;
 }
 
 .tracklistContainer h2,

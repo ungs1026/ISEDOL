@@ -214,7 +214,13 @@
 			<div class="kid-left">
 				<img src="./source/img/kidding.jpg" alt="kidding-Album">
 				<img src="./source/img/single/KIDDING.png" alt="kidding-Album" class="cover-overlay">
-				<button id="openModalBtn">lyrics</button>
+				<div class="audio-control">
+					<audio controls>
+						<source src="./source/music_group/kidding.mp3" type="audio/mp3">
+						None
+					</audio>
+					<button id="openModalBtn">lyrics</button>
+				</div>
 			</div>
 			<div class="kid-right">
 				<div class="text-section">

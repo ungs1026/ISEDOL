@@ -21,7 +21,6 @@ include('includes/getUserId.php');
 	<!--Include Local Script-->
 	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./css/group.css">
-	<script defer src="./js/group.js"></script>
 </head>
 
 <body class="scrollbar">
