@@ -16,8 +16,9 @@ create table users (
 );
 
 -- insert
-insert into user(username, firstName, lastName, email, password, profilePic) values 
-('tester','te','ster','test@gmail.com','12345','source/img/leaf.png');
+insert into users(username, firstName, lastName, email, password, profilePic) values 
+('tester','te','ster','test@gmail.com','4297f44b13955235245b2497399d7a93','source/img/leaf.png'),
+('jingburger','burger','jing','jingburger@gmail.com','4297f44b13955235245b2497399d7a93','source/img/leaf.png');
 
 -- goods
 CREATE TABLE goods (
@@ -108,7 +109,7 @@ create table songs (
 );
 
 --insert
---INE
+-- INE
 insert into songs (title, artist, album, duration, path, albumOrder, songArt, plays) values
 ('mashup', 1, 1, '3:34', 'source/music_group/1INE/ine_mashup.mp3', 1, 'source/music_group/1INE/ine_mashup.jpg', 0),
 ('lovely', 1, 1, '3:12', 'source/music_group/1INE/ine_lovely.mp3', 1, 'source/music_group/1INE/ine_lovely.jpg', 0),

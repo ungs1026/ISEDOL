@@ -1,0 +1,83 @@
+ine
+https://namu.wiki/w/%EC%95%84%EC%9D%B4%EB%84%A4
+<div class="member-sns">
+  <a href="https://bj.afreecatv.com/inehine" target="_blank">
+    <img src="source/img/afreecaTv.png" alt="...">
+  </a>
+  <a href="https://www.instagram.com/ine_hamine/" target="_blank">
+    <img src="source/img/insta.png" alt="...">
+  </a>
+  <a href="https://www.youtube.com/@INE_" target="_blank">
+    <img src="source/img/youtube.png" alt="...">
+  </a>
+</div>
+
+jingburger
+https://namu.wiki/w/%EC%A7%95%EB%B2%84%EA%B1%B0
+<div class="member-sns">
+  <a href="https://bj.afreecatv.com/jingburger1" target="_blank">
+    <img src="source/img/afreecaTv.png" alt="...">
+  </a>
+  <a href="https://x.com/jing_burger" target="_blank">
+    <img src="source/img/x-logo.png" alt="...">
+  </a>
+  <a href="https://www.youtube.com/@jingburger" target="_blank">
+    <img src="source/img/youtube.png" alt="...">
+  </a>
+</div>
+
+lilpa
+https://namu.wiki/w/%EB%A6%B4%ED%8C%8C
+<div class="member-sns">
+  <a href="https://bj.afreecatv.com/lilpa0309" target="_blank">
+    <img src="source/img/afreecaTv.png" alt="...">
+  </a>
+  <a href="https://x.com/lilpa_official" target="_blank">
+    <img src="source/img/x-logo.png" alt="...">
+  </a>
+  <a href="https://www.youtube.com/@lilpa" target="_blank">
+    <img src="source/img/youtube.png" alt="...">
+  </a>
+</div>
+
+jururu
+https://namu.wiki/w/%EC%A3%BC%EB%A5%B4%EB%A5%B4
+<div class="member-sns">
+  <a href="https://bj.afreecatv.com/cotton1217" target="_blank">
+    <img src="source/img/afreecaTv.png" alt="...">
+  </a>
+  <a href="https://x.com/jururu_twitch" target="_blank">
+    <img src="source/img/x-logo.png" alt="...">
+  </a>
+  <a href="https://www.youtube.com/@JU_RURU" target="_blank">
+    <img src="source/img/youtube.png" alt="...">
+  </a>
+</div>
+
+gosegu
+https://namu.wiki/w/%EA%B3%A0%EC%84%B8%EA%B5%AC
+<div class="member-sns">
+  <a href="https://bj.afreecatv.com/gosegu2" target="_blank">
+    <img src="source/img/afreecaTv.png" alt="...">
+  </a>
+  <a href="https://x.com/gosegu486385" target="_blank">
+    <img src="source/img/x-logo.png" alt="...">
+  </a>
+  <a href="https://www.youtube.com/@gosegu" target="_blank">
+    <img src="source/img/youtube.png" alt="...">
+  </a>
+</div>
+
+viichan
+https://namu.wiki/w/%EB%B9%84%EC%B1%A4
+<div class="member-sns">
+  <a href="https://bj.afreecatv.com/viichan6" target="_blank">
+    <img src="source/img/afreecaTv.png" alt="...">
+  </a>
+  <a href="https://x.com/viichan6" target="_blank">
+    <img src="source/img/x-logo.png" alt="...">
+  </a>
+  <a href="https://www.youtube.com/@viichan116" target="_blank">
+    <img src="source/img/youtube.png" alt="...">
+  </a>
+</div>

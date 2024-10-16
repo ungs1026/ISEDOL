@@ -77,126 +77,264 @@
 		<!--INE-->
 		<div class="member">
 			<div class="member-img">
-				<a href="https://namu.wiki/w/%EC%95%84%EC%9D%B4%EB%84%A4" target="_blank">
-					<img src="source/img/member/profile-ine.png" alt="...">
-					<p>INE</p>
-				</a>
+				<img src="source/img/member/profile-ine.png" alt="...">
+				<p>INE</p>
 			</div>
-			<div class="member-sns">
-				<a href="https://bj.afreecatv.com/inehine" target="_blank">
-					<img src="source/img/afreecaTv.png" alt="...">
-				</a>
-				<a href="https://www.instagram.com/ine_hamine/" target="_blank">
-					<img src="source/img/insta.png" alt="...">
-				</a>
-				<a href="https://www.youtube.com/@INE_" target="_blank">
-					<img src="source/img/youtube.png" alt="...">
-				</a>
+			<div class="member-inner">
+				<div class="close">
+					<button id="btn_close">X</button>
+				</div>
+				<p class="mem-inner-name">아이네 / INE</p>
+				<div class="inner-des">
+					<div class="left-sec">
+						<img src="source/img/member/ine/ine_face.png" alt="...">
+						<img src="source/img/member/ine/ine_body.png" alt="...">
+						<img src="source/img/member/ine/ine_fan.png" alt="...">
+					</div>
+					<div class="right-sec">
+						
+						<div class="col" style="background-color: #8A2BE2;">파란제비꽃색 / #8A2BE2</div>
+						<p>생일 : 1994년 (비공개)</p>
+						<p>소속사 : 왁 엔터테이면트</p>
+						<p>소속 그룹 : 이세계 아이돌</p>
+						<p>첫 방송일 : 2021년 7월 26일</p>
+						<p>팬덤 명 : 둘기</p>
+						<p>MBTI : INFP</p>
+						<p>별명 : 이네땅, 이잉네, 아굳형 등</p>
+					</div>
+				</div>
+				<div class="member-sns">
+					<a href="https://bj.afreecatv.com/inehine" target="_blank">
+						<img src="source/img/afreecaTv.png" alt="...">
+					</a>
+					<a href="https://www.instagram.com/ine_hamine/" target="_blank">
+						<img src="source/img/insta.png" alt="...">
+					</a>
+					<a href="https://www.youtube.com/@INE_" target="_blank">
+						<img src="source/img/youtube.png" alt="...">
+					</a>
+				</div>
 			</div>
 		</div>
 
 		<!--JIGNBURGER-->
 		<div class="member">
 			<div class="member-img">
-				<a href="https://namu.wiki/w/%EC%A7%95%EB%B2%84%EA%B1%B0" target="_blank">
-					<img src="source/img/member/profile-jingburger.png" alt="...">
-					<p>JIGNBURGER</p>
-				</a>
+				<img src="source/img/member/profile-jingburger.png" alt="...">
+				<p>JIGNBURGER</p>
 			</div>
-			<div class="member-sns">
-				<a href="https://bj.afreecatv.com/jingburger1" target="_blank">
-					<img src="source/img/afreecaTv.png" alt="...">
-				</a>
-				<a href="https://x.com/jing_burger" target="_blank">
-					<img src="source/img/x-logo.png" alt="...">
-				</a>
-				<a href="https://www.youtube.com/@jingburger" target="_blank">
-					<img src="source/img/youtube.png" alt="...">
-				</a>
+
+			<div class="member-inner">
+				<div class="close">
+					<button id="btn_close">X</button>
+				</div>
+				<p class="mem-inner-name">징버거 / JINGBURGER</p>
+
+				<div class="inner-des">
+					<div class="left-sec">
+						<img src="source/img/member/jingburger/jing_face.png" alt="...">
+						<img src="source/img/member/jingburger/jing_body.png" alt="...">
+						<img src="source/img/member/jingburger/jing_fan.png" alt="...">
+					</div>
+					<div class="right-sec">
+						<div class="col" style="background-color: #f0a957;">노란색 / #F0A957</div>
+						<p>생일 : 1995년 10월 8일</p>
+						<p>소속사 : 왁 엔터테이면트</p>
+						<p>소속 그룹 : 이세계 아이돌</p>
+						<p>첫 방송일 : 2018년 7월 10일</p>
+						<p>팬덤 명 : 똥강아지</p>
+						<p>MBTI : INTJ</p>
+						<p>별명 : 부가땅, 버건니, 버그 등</p>
+					</div>
+				</div>
+				<div class="member-sns">
+					<a href="https://bj.afreecatv.com/jingburger1" target="_blank">
+						<img src="source/img/afreecaTv.png" alt="...">
+					</a>
+					<a href="https://x.com/jing_burger" target="_blank">
+						<img src="source/img/x-logo.png" alt="...">
+					</a>
+					<a href="https://www.youtube.com/@jingburger" target="_blank">
+						<img src="source/img/youtube.png" alt="...">
+					</a>
+				</div>
+
 			</div>
 		</div>
 
 		<!--LILPA-->
 		<div class="member">
 			<div class="member-img">
-				<a href="https://namu.wiki/w/%EB%A6%B4%ED%8C%8C" target="_blank">
-					<img src="source/img/member/profile-lilpa.png" alt="...">
-					<p>LILPA</p>
-				</a>
+				<img src="source/img/member/profile-lilpa.png" alt="...">
+				<p>LILPA</p>
 			</div>
-			<div class="member-sns">
-				<a href="https://bj.afreecatv.com/lilpa0309" target="_blank">
-					<img src="source/img/afreecaTv.png" alt="...">
-				</a>
-				<a href="https://x.com/lilpa_official" target="_blank">
-					<img src="source/img/x-logo.png" alt="...">
-				</a>
-				<a href="https://www.youtube.com/@lilpa" target="_blank">
-					<img src="source/img/youtube.png" alt="...">
-				</a>
+			<p class="mem-inner-name">릴파 / LILPA</p>
+
+			<div class="member-inner">
+				<div class="close">
+					<button id="btn_close">X</button>
+				</div>
+
+				<div class="inner-des">
+					<div class="left-sec">
+						<img src="source/img/member/lilpa/lil_face.png" alt="...">
+						<img src="source/img/member/lilpa/lil_body.png" alt="...">
+						<img src="source/img/member/lilpa/lil_fan.png" alt="...">
+					</div>
+					<div class="right-sec">
+						<div class="col" style="background-color: #000080;">네이비 블루 / #000080</div>
+						<p>생일 : 1996년 3월 9일</p>
+						<p>소속사 : 왁 엔터테이면트</p>
+						<p>소속 그룹 : 이세계 아이돌</p>
+						<p>첫 방송일 : 2021년 7월 24일</p>
+						<p>팬덤 명 : 박쥐단</p>
+						<p>MBTI : ENFP</p>
+						<p>별명 : 김릴파, 릴파넴, 릴트리버</p>
+					</div>
+				</div>
+				<div class="member-sns">
+					<a href="https://bj.afreecatv.com/lilpa0309" target="_blank">
+						<img src="source/img/afreecaTv.png" alt="...">
+					</a>
+					<a href="https://x.com/lilpa_official" target="_blank">
+						<img src="source/img/x-logo.png" alt="...">
+					</a>
+					<a href="https://www.youtube.com/@lilpa" target="_blank">
+						<img src="source/img/youtube.png" alt="...">
+					</a>
+				</div>
 			</div>
 		</div>
 
 		<!--JURURU-->
 		<div class="member">
 			<div class="member-img">
-				<a href="https://namu.wiki/w/%EC%A3%BC%EB%A5%B4%EB%A5%B4" target="_blank">
-					<img src="source/img/member/profile-jururu.png" alt="...">
-					<p>JURURU</p>
-				</a>
+				<img src="source/img/member/profile-jururu.png" alt="...">
+				<p>JURURU</p>
 			</div>
-			<div class="member-sns">
-				<a href="https://bj.afreecatv.com/cotton1217" target="_blank">
-					<img src="source/img/afreecaTv.png" alt="...">
-				</a>
-				<a href="https://x.com/jururu_twitch" target="_blank">
-					<img src="source/img/x-logo.png" alt="...">
-				</a>
-				<a href="https://www.youtube.com/@JU_RURU" target="_blank">
-					<img src="source/img/youtube.png" alt="...">
-				</a>
+
+			<div class="member-inner">
+				<div class="close">
+					<button id="btn_close">X</button>
+				</div>
+				<p class="mem-inner-name">주르르 / JURURU</p>
+
+				<div class="inner-des">
+					<div class="left-sec">
+						<img src="source/img/member/jururu/ju_face.png" alt="...">
+						<img src="source/img/member/jururu/ju_body.png" alt="...">
+						<img src="source/img/member/jururu/ju_fan.png" alt="...">
+					</div>
+					<div class="right-sec">
+						<div class="col" style="background-color: #ff008c;">분홍색 / #FF008C</div>
+						<p>생일 : 1997년 6월 10일</p>
+						<p>소속사 : 왁 엔터테이면트</p>
+						<p>소속 그룹 : 이세계 아이돌</p>
+						<p>첫 방송일 : 2018년 3월 14일</p>
+						<p>팬덤 명 : 주폭도</p>
+						<p>MBTI : INFP</p>
+						<p>별명 : 르르땅, 주폭스, 코튼 등</p>
+					</div>
+				</div>
+				<div class="member-sns">
+					<a href="https://bj.afreecatv.com/cotton1217" target="_blank">
+						<img src="source/img/afreecaTv.png" alt="...">
+					</a>
+					<a href="https://x.com/jururu_twitch" target="_blank">
+						<img src="source/img/x-logo.png" alt="...">
+					</a>
+					<a href="https://www.youtube.com/@JU_RURU" target="_blank">
+						<img src="source/img/youtube.png" alt="...">
+					</a>
+				</div>
 			</div>
 		</div>
 
 		<!--GOSEGU-->
 		<div class="member">
 			<div class="member-img">
-				<a href="https://namu.wiki/w/%EA%B3%A0%EC%84%B8%EA%B5%AC" target="_blank">
-					<img src="source/img/member/profile-gosegu.png" alt="...">
-					<p>GOSEGU</p>
-				</a>
+				<img src="source/img/member/profile-gosegu.png" alt="...">
+				<p>GOSEGU</p>
 			</div>
-			<div class="member-sns">
-				<a href="https://bj.afreecatv.com/gosegu2" target="_blank">
-					<img src="source/img/afreecaTv.png" alt="...">
-				</a>
-				<a href="https://x.com/gosegu486385" target="_blank">
-					<img src="source/img/x-logo.png" alt="...">
-				</a>
-				<a href="https://www.youtube.com/@gosegu" target="_blank">
-					<img src="source/img/youtube.png" alt="...">
-				</a>
+
+			<div class="member-inner">
+				<div class="close">
+					<button id="btn_close">X</button>
+				</div>
+				<p class="mem-inner-name">고세구 / GOSEGU</p>
+
+				<div class="inner-des">
+					<div class="left-sec">
+						<img src="source/img/member/gosegu/go_face.png" alt="...">
+						<img src="source/img/member/gosegu/go_body.png" alt="...">
+						<img src="source/img/member/gosegu/go_fan.png" alt="...">
+					</div>
+					<div class="right-sec">
+						<div class="col" style="background-color: #467ec6;">하늘색 / #467EC6</div>
+						<p>생일 : 1998년 (비공개)</p>
+						<p>소속사 : 왁 엔터테이면트</p>
+						<p>소속 그룹 : 이세계 아이돌</p>
+						<p>첫 방송일 : 2021년 7월 27일</p>
+						<p>팬덤 명 : 세균단</p>
+						<p>MBTI : ENTJ</p>
+						<p>별명 : 세구세구, 고양이, 구스 등</p>
+					</div>
+				</div>
+				<div class="member-sns">
+					<a href="https://bj.afreecatv.com/gosegu2" target="_blank">
+						<img src="source/img/afreecaTv.png" alt="...">
+					</a>
+					<a href="https://x.com/gosegu486385" target="_blank">
+						<img src="source/img/x-logo.png" alt="...">
+					</a>
+					<a href="https://www.youtube.com/@gosegu" target="_blank">
+						<img src="source/img/youtube.png" alt="...">
+					</a>
+				</div>
 			</div>
 		</div>
 
 		<!--VIICHAN-->
 		<div class="member">
 			<div class="member-img">
-				<a href="https://namu.wiki/w/%EB%B9%84%EC%B1%A4" target="_blank">
-					<img src="source/img/member/profile-viichan.png" alt="...">
-					<p>VIICHAN</p>
-				</a>
+				<img src="source/img/member/profile-viichan.png" alt="...">
+				<p>VIICHAN</p>
 			</div>
-			<div class="member-sns">
-				<a href="https://bj.afreecatv.com/viichan6" target="_blank">
-					<img src="source/img/afreecaTv.png" alt="...">
-				</a>
-				<a href="https://x.com/viichan6" target="_blank">
-					<img src="source/img/x-logo.png" alt="...">
-				</a>
-				<a href="https://www.youtube.com/@viichan116" target="_blank">
-					<img src="source/img/youtube.png" alt="...">
-				</a>
+
+			<div class="member-inner">
+				<div class="close">
+					<button id="btn_close">X</button>
+				</div>
+				<p class="mem-inner-name">비챤 / VIICHAN</p>
+
+				<div class="inner-des">
+					<div class="left-sec">
+						<img src="source/img/member/viichan/vi_face.png" alt="...">
+						<img src="source/img/member/viichan/vi_body.png" alt="...">
+						<img src="source/img/member/viichan/vi_fan.png" alt="...">
+					</div>
+					<div class="right-sec">
+						<div class="col" style="background-color: #a7fc00;">스프링버드 / #A7FC00</div>
+						<p>생일 : 2000년 1월 16일</p>
+						<p>소속사 : 왁 엔터테이면트</p>
+						<p>소속 그룹 : 이세계 아이돌</p>
+						<p>첫 방송일 : 2021년 5월 30일</p>
+						<p>팬덤 명 : 라니</p>
+						<p>MBTI : ENFJ</p>
+						<p>별명 : 챠니, 납작복숭아, 장비챤 등</p>
+					</div>
+				</div>
+				<div class="member-sns">
+					<a href="https://bj.afreecatv.com/viichan6" target="_blank">
+						<img src="source/img/afreecaTv.png" alt="...">
+					</a>
+					<a href="https://x.com/viichan6" target="_blank">
+						<img src="source/img/x-logo.png" alt="...">
+					</a>
+					<a href="https://www.youtube.com/@viichan116" target="_blank">
+						<img src="source/img/youtube.png" alt="...">
+					</a>
+				</div>
 			</div>
 		</div>
 

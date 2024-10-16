@@ -17,6 +17,41 @@ new Swiper('.event .swiper-container', {
   }
 })
 
+// MEMBER
+// Move
+// 모든 member 요소를 선택
+const members = document.querySelectorAll('.member');
+
+// 각 member에 클릭 이벤트를 추가해 active 클래스를 토글
+members.forEach((member) => {
+    const imgContainer = member.querySelector('.member-img');
+    const closeButton = member.querySelector('#btn_close');
+
+    // member 이미지를 클릭하면 active 클래스 추가
+    imgContainer.addEventListener('click', () => {
+        // 클릭되지 않은 다른 member들은 숨김 처리
+        members.forEach((m) => {
+            if (m !== member) {
+                m.style.display = 'none'; // 다른 member 숨기기
+            }
+        });
+        // 클릭된 member에 active 클래스 추가
+        member.classList.add('active');
+    });
+
+    // close 버튼 클릭 시 active 클래스 제거 및 모든 member 다시 보이게
+    closeButton.addEventListener('click', () => {
+        member.classList.remove('active');
+
+        // 모든 member를 다시 보이도록 설정
+        members.forEach((m) => {
+            m.style.display = 'block'; // 모든 member 다시 표시
+        });
+    });
+});
+
+
+
 /**
  * Modal
  */
