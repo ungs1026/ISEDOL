@@ -118,6 +118,7 @@
 }
 
 .member-icon-group .member {
+	position: relative;
 	opacity: 1;
 	visibility: visible;
 	transition: opacity 0.5s ease, visibility 0.5s ease;
@@ -144,14 +145,18 @@
 }
 
 .member-icon-group .member .member-inner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0%;
+	height: 100%;
+	transition: width 1s ease;
 	display: none;
 }
 
 .member-icon-group .member.active {
-	width: 60%;
-	height: 50vh;
-	border-bottom: 2px solid black;
-	border-radius: 2rem;
+	width: 100%;
+	height: 60vh;
 	transition: all .5s ease-in-out;
 
 	.member-img {
@@ -159,11 +164,8 @@
 	}
 
 	.member-inner {
-		position: relative;
 		display: flex;
 		flex-direction: column;
-		width: 100%;
-		height: 100%;
 
 		.close {
 			display: flex;
@@ -181,6 +183,11 @@
 
 				cursor: pointer;
 			}
+		}
+
+		.content {
+			opacity: 0;
+			transition: opacity 1s ease-in-out;
 		}
 
 		.inner-des {
@@ -201,9 +208,10 @@
 
 			img {
 				width: 14rem;
-				height: 14rem;
+				height: 18rem;
 				object-fit: contain;
 				border-radius: 2rem;
+				box-shadow: 0 0 10px white;
 			}
 		}
 
@@ -212,13 +220,8 @@
 
 			p {
 				font-family: "Nanum Gothic", sans-serif;
-			}
-
-			.col {
-				color: white;
-				width: 50%;
-				padding: .5rem;
-				text-align: center;
+				font-size: 1.2rem;
+				line-height: 1rem;
 			}
 		}
 
@@ -246,18 +249,6 @@
 	font-weight: 900;
 	margin: 0;
 }
-
-.member-icon-group .member.hidden {
-	opacity: 0;
-	visibility: hidden;
-	/* 요소를 보이지 않게 처리 */
-}
-
-.member-icon-group .member.invisible {
-	display: none;
-	/* 완전히 숨기기 */
-}
-
 
 /*===========================ALBUM===========================*/
 .kidding {

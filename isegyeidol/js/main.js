@@ -21,33 +21,52 @@ new Swiper('.event .swiper-container', {
 // Move
 // 모든 member 요소를 선택
 const members = document.querySelectorAll('.member');
+const member_inners = document.querySelectorAll('.member-inner');
+console.log(member_inners);
+
 
 // 각 member에 클릭 이벤트를 추가해 active 클래스를 토글
 members.forEach((member) => {
-    const imgContainer = member.querySelector('.member-img');
-    const closeButton = member.querySelector('#btn_close');
+  const imgContainer = member.querySelector('.member-img');
+  const closeButton = member.querySelector('#btn_close');
 
-    // member 이미지를 클릭하면 active 클래스 추가
-    imgContainer.addEventListener('click', () => {
-        // 클릭되지 않은 다른 member들은 숨김 처리
-        members.forEach((m) => {
-            if (m !== member) {
-                m.style.display = 'none'; // 다른 member 숨기기
-            }
-        });
-        // 클릭된 member에 active 클래스 추가
-        member.classList.add('active');
+  // member 이미지를 클릭하면 active 클래스 추가
+  imgContainer.addEventListener('click', () => {
+    // 클릭되지 않은 다른 member들은 숨김 처리
+    members.forEach((m) => {
+      if (m !== member) {
+        m.style.display = 'none'; // 다른 member 숨기기
+      }
     });
+    // 클릭된 member에 active 클래스 추가
+    member.classList.add('active');
+    const mem_inner = member.querySelector('.member-inner');
+    const mem_con = mem_inner.querySelector('.content');
+    setTimeout(() => {
+      mem_inner.style.width = '100%';
+    }, 500); // 0.5초 뒤 애니메이션 시작
 
-    // close 버튼 클릭 시 active 클래스 제거 및 모든 member 다시 보이게
-    closeButton.addEventListener('click', () => {
-        member.classList.remove('active');
+    setTimeout(() => {
+      mem_con.style.opacity = '1';
+    }, 1300); // 0.5초 뒤 애니메이션 시작
+  });
 
-        // 모든 member를 다시 보이도록 설정
-        members.forEach((m) => {
-            m.style.display = 'block'; // 모든 member 다시 표시
-        });
+  // close 버튼 클릭 시 active 클래스 제거 및 모든 member 다시 보이게
+  closeButton.addEventListener('click', () => {
+    member.classList.remove('active');
+
+    const mem_inner = member.querySelector('.member-inner');
+    const mem_con = mem_inner.querySelector('.content');
+
+    // 애니메이션을 위한 스타일 초기화
+    mem_inner.style.width = '0';
+    mem_con.style.opacity = '0';
+
+    // 모든 member를 다시 보이도록 설정
+    members.forEach((m) => {
+      m.style.display = 'block'; // 모든 member 다시 표시
     });
+  });
 });
 
 

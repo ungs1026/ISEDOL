@@ -21,6 +21,8 @@ include('includes/getUserId.php');
 	<!--Include Local Script-->
 	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="./css/group.css">
+
+	<script src="js/group.js"></script>
 </head>
 
 <body class="scrollbar">
@@ -61,6 +63,7 @@ include('includes/getUserId.php');
 							<div class="song-item" data-id="<?php echo htmlspecialchars($song['id']); ?>">
 								<a href="<?php echo htmlspecialchars($song['youtube']) ?>">
 									<img src="<?php echo htmlspecialchars($song['thumbnail']); ?>" alt="Thumbnail" class="song-thumb">
+									<img src="./source/img/disk.png" alt="Disk" class="song-disk">
 									<img src="<?php echo htmlspecialchars($song['thumbnail']); ?>" alt="Thumbnail" class="song-thumb-overlay">
 								</a>
 								<div class="song-name"><?php echo htmlspecialchars($song['name']); ?></div>
