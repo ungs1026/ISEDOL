@@ -26,11 +26,11 @@ include('includes/getUserId.php');
 </head>
 
 <body class="scrollbar">
-	<?php include './includes/part/nav.php'; ?>
+	<?php include_once './includes/part/nav.php'; ?>
 
 	<main>
 		<section class="content-wrapper">
-			<?php include './includes/part/albumSidebar.php' ?>
+			<?php include_once './includes/part/albumSidebar.php' ?>
 
 			<section class="content">
 				<div class="main-img">
@@ -48,7 +48,7 @@ include('includes/getUserId.php');
 				<div class="album-grid">
 					<?php
 					// 페이지네이션 포함 / db는 getUserId에 있기 때문에 생략
-					$pagination = include './includes/part/albumPagination.php';
+					$pagination = include_once './includes/part/albumPagination.php';
 					$albums = $pagination['albums'];
 					$totalPages = $pagination['totalPages'];
 					$currentPage = $pagination['currentPage'];
@@ -97,7 +97,7 @@ include('includes/getUserId.php');
 	</main>
 
 	<?php
-		include 'includes/part/infoFooter.php';
+		include_once 'includes/part/infoFooter.php';
 	?>
 </body>
 

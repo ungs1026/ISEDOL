@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include('includes/getUserId.php');
 ?>
 
@@ -17,11 +19,23 @@ include('includes/getUserId.php');
 		</div>
 		<div class="nav-right">
 			<!--nav right section-->
-			<img src="<?= $user['profilePic']?>" alt="profilePic">
-			<span class="user"><?= $user['username'] ?></span>
+			<?php if ($user['level'] == 10) { ?>
+				<div class="admin_sec">
+					<a href="admin/admin.php">
+						<span>Admin</span>
+						<img src="<?= $user['profilePic'] ?>" alt="profilePic">
+					</a>
+				</div>
+			<?php } else { ?>
+				<img src="<?= $user['profilePic'] ?>" alt="profilePic">
+			<?php } ?>
 
-			<p><button id="btn-login" onclick="location.href='register.php'">LogIn</button></p>
-			<p><button id="btn-logout" onclick="location.href='includes/handlers/ajax/logout.php'">LogOut</button></p>
+			<span class="user"><?= $user['username'] ?></span>
+			<?php if (isset($_SESSION['userId']) && $_SESSION['userId'] != 0) { ?>
+				<p><button id="btn-logout" onclick="location.href='includes/handlers/ajax/logout.php'">LogOut</button></p>
+			<?php } else { ?>
+				<p><button id="btn-login" onclick="location.href='register.php'">LogIn</button></p>
+			<?php } ?>
 		</div>
 	</nav>
 

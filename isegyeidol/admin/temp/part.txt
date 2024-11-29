@@ -1,0 +1,284 @@
+// 모든 사이트 필요한 내용
+
+$js_array => js
+$css_array => css => 위치까지 같이 작성해야 된다
+$menu_code => 하이라이트 파츠
+$g_title => title
+$logo => logo addr
+$footerLogo => footer logo
+$commonC => common.css
+
+Array
+(
+	[0] => Array
+		(
+			[id] => 3
+			[username] => jingburger
+			[email] => Jingburger@gmail.com
+			[signUpDate] => 2024-09-27 15:28
+			[level] => 10
+		)
+
+	[1] => Array
+		(
+			[id] => 1
+			[username] => tester
+			[email] => tester@gmail.com
+			[signUpDate] => 2024-09-27 12:06
+			[level] => 1
+		)
+
+	[2] => Array
+		(
+			[id] => 0
+			[username] => Guest
+			[email] => guest@gmail.com
+			[signUpDate] => 2024-10-06 13:49
+			[level] => 1
+		)
+)
+
+Array
+(
+	[id] => 3
+	[username] => jingburger
+	[firstName] => Burger
+	[lastName] => Jing
+	[email] => Jingburger@gmail.com
+	[password] => 4297f44b13955235245b2497399d7a93
+	[signUpDate] => 2024-09-27 15:28:52
+	[profilePic] => source/img/leaf.png
+	[level] => 10
+)
+
+Array ( [email] => Qweqwe@qwe.qwe1 [mode] => email_chk )
+
+Array
+(
+	[mode] => edit
+	[idx] => 6
+	[email_chk] => 0
+	[old_email] => Qweqwe@qwe.qwe
+	[old_photo] => source/img/leaf.png
+	[id] => qwewqe
+	[name] => QweqweqweQweqwe
+	[level] => 1
+	[password] => 
+	[password2] => 
+	[email] => Qweqwe@qwe.qwe
+)
+
+albums
+- id, name, thumbnail, date, year, kind, youtube
+=> 분류 / 타이틀 / 썸네일 위치(source/img/single(cover)/REWIND.png) / 올라온 날짜 / 년도 / single or cover / youtube url
+1
+Re: WIND
+source/img/single/REWIND.png
+2021-12-17
+2021
+single
+https://www.youtube.com/watch?v=fgSXAKsq-Vo
+
+<?php
+		foreach ($memArr as $row) {
+			// 데이터 정리
+			// $row['create_at'] = substr($row['create_at'], 0, 16);
+		?>
+			<tr>
+				<td><?= $row['id'] ?></td>
+				<td><img src="../<?= $row['thumbnail'] ?>" alt=""></td>
+				<td><?= $row['name'] ?></td>
+				<td><?= $row['date'] ?></td>
+				<td><?= $row['kind'] ?></td>
+				<td>
+					<a href="<?= $row['youtube'] ?>"><img src="../source/img/youtube.png" alt=""></a>
+				</td>
+				<td>
+					<button class="btn btn-danger btn-sm btn_mem_delete" data-id="<?= $row['id']; ?>">삭제</button>
+				</td>
+			</tr>
+		<?php } ?>
+
+
+		
+Array (
+	[0] => Array
+		(
+				[id] => 17
+				[name] => Kissing You
+				[thumbnail] => source/img/cover/Kissing You.png
+				[date] => 2024-03-20 00:00
+				[year] => 2024
+				[kind] => cover
+				[youtube] => https://www.youtube.com/watch?v=OrFyzG5yTC4
+		)
+	[1] => Array
+			(
+				[id] => 16
+				[name] => LOVE DIVE
+				[thumbnail] => source/img/cover/LOVE DIVE.png
+				[date] => 2022-09-05 00:00
+				[year] => 2022
+				[kind] => cover
+				[youtube] => https://www.youtube.com/watch?v=Brf3LWwNVTk
+			)
+	[2] => Array
+			(
+				[id] => 15
+				[name] => 풍선
+				[thumbnail] => source/img/cover/풍선.png
+				[date] => 2022-08-28 00:00
+				[year] => 2022
+				[kind] => cover
+				[youtube] => https://www.youtube.com/watch?v=21trg6DfzX8
+			)
+	[3] => Array
+			(
+				[id] => 14
+				[name] => 우마뾰이 전설
+				[thumbnail] => source/img/cover/우마뾰이 전설.png
+				[date] => 2022-08-23 00:00
+				[year] => 2022
+				[kind] => cover
+				[youtube] => https://www.youtube.com/watch?v=TYB9ScXvq34
+			)
+	[4] => Array
+			(
+				[id] => 13
+				[name] => My WAKTAVERSE
+				[thumbnail] => source/img/cover/My WAKTAVERSE.png
+				[date] => 2021-12-27 00:00
+				[year] => 2021
+				[kind] => cover
+				[youtube] => https://www.youtube.com/watch?v=Kc85nOaqLwo
+			)
+)
+
+
+// Array (
+// 	[title] => title
+// 	[year] => 2022
+// 	[date] => 2024-11-07
+// 	[kind] => cushion
+// 	[youtube] => asdasasd.asd
+// )
+// Array (
+// 	[thumnail] => Array
+// 		(
+// 			[name] => 5.webp
+// 			[type] => image/webp
+// 			[tmp_name] => D:\xampp\tmp\phpEDBC.tmp
+// 			[error] => 0
+// 			[size] => 10362
+// 		)
+// )
+
+<?php
+		foreach ($albumArr as $row) {
+			// 데이터 정리
+			// $row['create_at'] = substr($row['create_at'], 0, 16);
+		?>
+			<tr>
+				<td><?= $row['id'] ?></td>
+				<td><img src="../<?= $row['thumbnail'] ?>" alt="" style="width: 3rem;"></td>
+				<td><?= $row['name'] ?></td>
+				<td><?= $row['date'] ?></td>
+				<td><?= $row['kind'] ?></td>
+				<td>
+					<a href="<?= $row['youtube'] ?>"><img src="../source/img/youtube.png" alt="" style="width: 3rem;"></a>
+				</td>
+				<td>
+					<button class="btn btn-danger btn-sm btn_album_delete" data-id="<?= $row['id']; ?>">삭제</button>
+				</td>
+			</tr>
+		<?php } ?>
+
+id, name, price, img, detailImg, production, sales, kind
+
+<production>
+cushion
+acrylic
+photo
+sundries
+pad
+clothes
+
+1
+face-cushion
+35000
+source/img/goods/face-cushion.jpg
+source/img/goods_detail/detail-face-cushion.jpg
+1stPopUp
+10
+cushion
+
+[0] => Array
+	(
+		[id] => 22
+		[name] => short-sleeved-shirt-b
+		[price] => 25900
+		[img] => source/img/goods/short-sleeved-shirt-b.jpg
+		[detailImg] => source/img/goods_detail/detail-short-sleeved-shirt-b.jpg
+		[production] => 1stPopUp
+		[sales] => 5500
+		[kind] => clothes
+	)
+
+    [1] => Array
+	(
+		[id] => 21
+		[name] => short-sleeved-shirt-w
+		[price] => 25900
+		[img] => source/img/goods/short-sleeved-shirt-w.jpg
+		[detailImg] => source/img/goods_detail/detail-short-sleeved-shirt-w.jpg
+		[production] => 1stPopUp
+		[sales] => 5550
+		[kind] => clothes
+	)
+
+    [2] => Array
+	(
+		[id] => 20
+		[name] => sweatshirt
+		[price] => 39900
+		[img] => source/img/goods/sweatshirt.jpg
+		[detailImg] => source/img/goods_detail/detail-sweatshirt.jpg
+		[production] => 1stPopUp
+		[sales] => 2550
+		[kind] => clothes
+	)
+
+title, artist, album, duration, path, albumOrder, songArt
+
+Array
+// (
+//     [title] => wer
+//     [artist] => 1
+//     [album] => 1
+//     [duration] => 3:30
+//     [albumOrder] => 1
+//     [mode] => create
+// )
+// Array
+// (
+//     [path] => Array
+//         (
+//             [name] => 3.webp
+//             [type] => image/webp
+//             [tmp_name] => D:\xampp\tmp\phpDBB8.tmp
+//             [error] => 0
+//             [size] => 12034
+//         )
+
+//     [songArt] => Array
+//         (
+//             [name] => 6.webp
+//             [type] => image/webp
+//             [tmp_name] => D:\xampp\tmp\phpDBB9.tmp
+//             [error] => 0
+//             [size] => 15212
+//         )
+
+// )
+
+		

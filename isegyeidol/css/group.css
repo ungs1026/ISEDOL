@@ -137,7 +137,7 @@ input[type="radio"]:checked {
 	opacity: 0; /* 기본적으로 보이지 않음 */
 	z-index: 2; /* 다른 요소 위에 위치 */
 	transform: scale(0.9);
-	transform-origin: 50.4% 59.6%;; /* 회전 중심을 중앙으로 설정 */
+	transform-origin: 49.8% 57.6%; /* 회전 중심을 중앙으로 설정 */
 }
 
 /* 블러 오버레이 스타일 */
@@ -168,7 +168,7 @@ input[type="radio"]:checked {
 .song-item:hover a .song-disk {
 	opacity: 1; 
 	transform: scale(0.9) translateY(-3rem); 
-	transition: all .5s ease-in-out;
+	transition: all .5s ease;
 	animation: rotateDisk 2s linear infinite; 
 }
 

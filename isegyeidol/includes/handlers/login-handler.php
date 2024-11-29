@@ -1,5 +1,7 @@
 <?php
-if(isset($_POST['loginButton'])) {
+include_once 'includes/pdo-dbconfig.php';
+
+if (isset($_POST['loginButton'])) {
 	//Login button was pressed
 	$username = $_POST['loginUsername'];
 	$password = $_POST['loginPassword'];
@@ -11,11 +13,9 @@ if(isset($_POST['loginButton'])) {
 	$res = mysqli_query($con, $sql);
 	$row = mysqli_fetch_array($res);
 
-	if($result == true) {
-		if(is_numeric($row[0]['id'])){
-			$_SESSION['userId'] = $row[0]['id'];
-			header("Location: main.php");
-		}
+	if ($result == true) {
+		$_SESSION['userId'] = $row[0]['id'];
+		$_SESSION['userLevel'] = $row[0]['level'];
+		header("Location: main.php");
 	}
 }
-?>
