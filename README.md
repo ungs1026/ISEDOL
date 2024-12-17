@@ -210,6 +210,10 @@ if (isset($_GET['id'])) {
 ##### 2024년 11월 29일
 - admin Page (user / album / goods / music) 추가
 -> Data 추가 / 수정 / 제거
+##### 2024년 12월 17일
+- admin Page 수정
+- Process mysqli->Pdo 방식
+- select List 출력 수정
 
 <!--접근-->
 ## 📫**Contact**
