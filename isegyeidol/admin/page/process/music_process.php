@@ -20,6 +20,16 @@ if ($mode == 'delete') {
 	$music->music_del($id);
 	die(json_encode(['result' => 'success']));
 } else if ($mode == 'add') {
+
+	if ($title == '') die(json_encode(['result' => 'empty_title']));
+
+	// 중복체크
+	$allTitle = $music->get_all_song_title();
+	$title_arr = array_column($allTitle, 'title');
+	if (in_array($title, $title_arr)) {
+		die(json_encode(['result' => 'title_repeated']));
+	}
+
 	// file
 	$path ='';
 	if (isset($_FILES['path']) && $_FILES['path']['name'] != '') {

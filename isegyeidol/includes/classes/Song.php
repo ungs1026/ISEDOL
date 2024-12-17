@@ -10,6 +10,7 @@
 		private $duration;
 		private $path;
 		private $songArt;
+		private $play;
 
 		public function __construct($con, $id) {
 			$this->con = $con;
@@ -23,6 +24,7 @@
 			$this->duration = $this->mysqliData['duration'];
 			$this->songArt = $this->mysqliData['songArt'];
 			$this->path = $this->mysqliData['path'];
+			$this->play = $this->mysqliData['plays'];
 		}
 
 		public function getTitle() {
@@ -57,5 +59,8 @@
 			return $this->mysqliData;
 		}
 
+		public function getPlay() {
+			return $this->play;
+		}
 	}
 ?>

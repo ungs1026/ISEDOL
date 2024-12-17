@@ -85,6 +85,15 @@ class Music
 		$stmt->execute();
 	}
 
+	// title check
+	public function get_all_song_title() {
+		$query = 'select title from songs';
+		$stmt = $this->conn->prepare($query);
+		$stmt->setFetchMode(PDO::FETCH_ASSOC);
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
+
 	// music add
 	public function song_art_upload($name, $new_photo)
 	{
@@ -101,7 +110,7 @@ class Music
 		$tmparr = explode('.', $new_file['name']);
 		$ext = end($tmparr); // 확장자 추출
 		if ($ext != 'mp3') {
-			$mp3 = 'error_ext';
+			die(json_encode(['result' => 'not_arrowed_ext']));
 		} else {
 			$mp3 = 'source/music_group/' . $name . '.' . $ext; // 새로운 파일 명
 			copy($new_file['tmp_name'], DOCUMENT_ROOT . "/" . $mp3);
@@ -131,5 +140,21 @@ class Music
 	public function test()
 	{
 		return 'connection_music';
+	}
+
+	public function artist_list() {
+		$query = 'select * from artists';
+		$stmt = $this->conn->prepare($query);
+		$stmt->setFetchMode(PDO::FETCH_ASSOC);
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
+
+	public function album_list() {
+		$query = 'select * from albums';
+		$stmt = $this->conn->prepare($query);
+		$stmt->setFetchMode(PDO::FETCH_ASSOC);
+		$stmt->execute();
+		return $stmt->fetchAll();
 	}
 }

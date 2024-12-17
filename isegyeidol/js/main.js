@@ -1,7 +1,7 @@
 /**
  * 슬라이드 요소 관리
  */
-new Swiper('.event .swiper-container', {
+let eventSwiper = new Swiper('.event .swiper-container', {
   // direction: 'horizontal', // 수평 슬라이드
   loop: true, // 반복 재생 여부
   slidesPerView: 3, // 한 번에 보여줄 슬라이드 개수
@@ -14,7 +14,12 @@ new Swiper('.event .swiper-container', {
   navigation: { // 슬라이드 이전/다음 버튼 사용 여부
     prevEl: '.event .swiper-prev', // 이전 버튼 선택자
     nextEl: '.event .swiper-next' // 다음 버튼 선택자
-  }
+  },
+  autoplay: {
+    delay: 4000,     // 자동 슬라이드 시간 (4000)
+    disableOnInteraction: false,  // 사용자가 스와이프 후에도 자동 슬라이드 계속
+    pauseOnMouseEnter: true,      // 마우스가 슬라이드 위에 있을 때 자동 재생 멈춤
+  },
 })
 
 // MEMBER
@@ -109,7 +114,19 @@ window.onclick = function (event) {
 }
 
 // Swiper.js 초기화
-var swiper = new Swiper('.swiper-container', {
+let debuttSwiper = new Swiper('.debut .swiper-container', {
+  slidesPerView: 3,  // 한 화면에 보이는 슬라이드 수
+  spaceBetween: 20,  // 슬라이드 간격
+  loop: true,        // 무한 반복 설정
+  autoplay: {
+    delay: 4000,     // 자동 슬라이드 시간 (4000)
+    disableOnInteraction: false,  // 사용자가 스와이프 후에도 자동 슬라이드 계속
+    pauseOnMouseEnter: true,      // 마우스가 슬라이드 위에 있을 때 자동 재생 멈춤
+  },
+});
+
+// Swiper.js 초기화
+let consertSwiper = new Swiper('.consert .swiper-container', {
   slidesPerView: 3,  // 한 화면에 보이는 슬라이드 수
   spaceBetween: 20,  // 슬라이드 간격
   loop: true,        // 무한 반복 설정

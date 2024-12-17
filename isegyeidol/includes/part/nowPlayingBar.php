@@ -18,8 +18,9 @@ $jsonArray = json_encode($resultArray);
 <script>
   // 문서가 로드되면 실행되는 초기화 코드
   $(document).ready(function() {
-    var newPlaylist = <?php echo $jsonArray; ?>; // PHP에서 전달된 노래 ID 배열
+    let newPlaylist = <?= $jsonArray; ?>; // PHP에서 전달된 노래 ID 배열
     audioElement = new Audio(); // 오디오 요소 생성
+    console.log('생성 직후 : ', audioElement)
     setTrack(newPlaylist[0], newPlaylist, false); // 첫 번째 트랙 설정
     updateVolumeProgressBar(audioElement.audio); // 볼륨 프로그레스 바 업데이트
 
@@ -47,7 +48,7 @@ $jsonArray = json_encode($resultArray);
     });
     $(".volumeBar .progressBar").mousemove(function(e) {
       if (mouseDown == true) {
-        var percentage = e.offsetX / $(this).width(); // 볼륨 퍼센트 계산
+        let percentage = e.offsetX / $(this).width(); // 볼륨 퍼센트 계산
         if (percentage >= 0 && percentage <= 1) {
           audioElement.audio.volume = percentage; // 오디오 볼륨 설정
         }
@@ -58,12 +59,14 @@ $jsonArray = json_encode($resultArray);
     $(document).mouseup(function() {
       mouseDown = false;
     });
+
+    console.log('종료 직전 : ', audioElement)
   });
 
   // 마우스 위치를 기반으로 재생 시간을 설정하는 함수
   function timeFromOffset(mouse, progressBar) {
-    var percentage = mouse.offsetX / $(progressBar).width() * 100; // 진행 바에 대한 퍼센트 계산
-    var seconds = audioElement.audio.duration * (percentage / 100); // 재생 시간으로 변환
+    let percentage = mouse.offsetX / $(progressBar).width() * 100; // 진행 바에 대한 퍼센트 계산
+    let seconds = audioElement.audio.duration * (percentage / 100); // 재생 시간으로 변환
     audioElement.setTime(seconds); // 오디오 재생 시간 설정
   }
 
@@ -90,28 +93,28 @@ $jsonArray = json_encode($resultArray);
       currentIndex++; // 다음 곡으로 이동
     }
 
-    var trackToPlay = shuffle ? shufflePlaylist[currentIndex] : currentPlaylist[currentIndex]; // 셔플에 따라 재생할 곡 선택
+    let trackToPlay = shuffle ? shufflePlaylist[currentIndex] : currentPlaylist[currentIndex]; // 셔플에 따라 재생할 곡 선택
     setTrack(trackToPlay, currentPlaylist, true); // 선택한 곡 재생
   }
 
   // 반복 재생 기능 설정
   function setRepeat() {
     repeat = !repeat; // 반복 여부 토글
-    var imageName = repeat ? "repeat-active.png" : "repeat.png"; // 아이콘 변경
+    let imageName = repeat ? "repeat-active.png" : "repeat.png"; // 아이콘 변경
     $(".controlButton.repeat img").attr("src", "source/icons/" + imageName);
   }
 
   // 볼륨 음소거 설정
   function setMute() {
     audioElement.audio.muted = !audioElement.audio.muted; // 음소거 토글
-    var imageName = audioElement.audio.muted ? "volume-mute.png" : "volume.png"; // 아이콘 변경
+    let imageName = audioElement.audio.muted ? "volume-mute.png" : "volume.png"; // 아이콘 변경
     $(".controlButton.volume img").attr("src", "source/icons/" + imageName);
   }
 
   // 랜덤곡 재생 기능 설정
   function setShuffle() {
     shuffle = !shuffle; // 셔플 여부 토글
-    var imageName = shuffle ? "shuffle-active.png" : "shuffle.png"; // 아이콘 변경
+    let imageName = shuffle ? "shuffle-active.png" : "shuffle.png"; // 아이콘 변경
     $(".controlButton.shuffle img").attr("src", "source/icons/" + imageName);
 
     if (shuffle == true) {
@@ -124,7 +127,7 @@ $jsonArray = json_encode($resultArray);
 
   // 배열을 셔플하는 함수
   function shuffleArray(a) {
-    var j, x, i;
+    let j, x, i;
     for (i = a.length; i; i--) {
       j = Math.floor(Math.random() * i); // 랜덤 인덱스 선택
       x = a[i - 1]; // 현재 인덱스와 랜덤 인덱스의 값 교환
@@ -147,24 +150,27 @@ $jsonArray = json_encode($resultArray);
     } else {
       currentIndex = currentPlaylist.indexOf(trackId);
     }
-    
+
     pauseSong(); // 현재 곡 일시 정지
 
     // AJAX 요청을 통해 곡 정보 가져오기
     $.post("includes/handlers/ajax/getSongJson.php", {
       songId: trackId
     }, function(data) {
-      var track = JSON.parse(data); // JSON 데이터를 객체로 변환
+      let track = JSON.parse(data); // JSON 데이터를 객체로 변환
+      $.post("includes/handlers/ajax/updatePlays.php", {
+        songId: track.id
+      })
 
       // UI 업데이트
       $(".trackName span").text(track.title);
-      $(".content .albumLink img").attr("src", track.songArt);
+      $(".content .albumLink img").attr("src", track.songArt); // attr = attribute
 
       // 아티스트 정보 가져오기
       $.post("includes/handlers/ajax/getArtistJson.php", {
         artistId: track.artist
       }, function(data) {
-        var artist = JSON.parse(data);
+        let artist = JSON.parse(data);
         $(".trackInfo .artistName span").text(artist.name);
         $(".trackInfo .artistName span").attr("onclick", "openPage('artist.php?id=" + artist.id + "')");
       });
@@ -173,7 +179,7 @@ $jsonArray = json_encode($resultArray);
       $.post("includes/handlers/ajax/getAlbumJson.php", {
         albumId: track.album
       }, function(data) {
-        var album = JSON.parse(data);
+        let album = JSON.parse(data);
         $(".content .albumLink img").attr("onclick", "openPage('album.php?id=" + album.id + "')");
         $(".trackInfo .trackName span").attr("onclick", "openPage('album.php?id=" + album.id + "')");
       });
@@ -187,12 +193,6 @@ $jsonArray = json_encode($resultArray);
 
   // 음악 재생
   function playSong() {
-    if (audioElement.audio.currentTime == 0) {
-      $.post("includes/handlers/ajax/updatePlays.php", {
-        songId: audioElement.currentlyPlaying.id // 재생 횟수 업데이트
-      });
-    }
-
     // 재생 버튼과 일시 정지 버튼의 UI 변경
     $(".controlButton.play").hide();
     $(".controlButton.pause").show();
@@ -209,89 +209,72 @@ $jsonArray = json_encode($resultArray);
 </script>
 
 <div id="nowPlayingBarContainer">
-
   <div id="nowPlayingBar">
 
+  <!-- Left -->
     <div id="nowPlayingLeft">
       <div class="content">
         <span class="albumLink">
           <img role="link" tabindex="0" src="" class="albumArtwork">
         </span>
-
         <div class="trackInfo">
-
           <span class="trackName">
             <span role="link" tabindex="0"></span>
           </span>
-
           <span class="artistName">
             <span role="link" tabindex="0"></span>
           </span>
-
         </div>
       </div>
     </div>
 
+    <!-- Center -->
     <div id="nowPlayingCenter">
-
       <div class="content playerControls">
-
         <div class="buttons">
-
           <button class="controlButton shuffle" title="Shuffle button" onclick="setShuffle()">
             <img src="source/icons/shuffle.png" alt="Shuffle">
           </button>
-
           <button class="controlButton previous" title="Previous button" onclick="prevSong()">
             <img src="source/icons/previous.png" alt="Previous">
           </button>
-
           <button class="controlButton play" title="Play button" onclick="playSong()">
             <img src="source/icons/play.png" alt="Play">
           </button>
-
           <button class="controlButton pause" title="Pause button" style="display: none;" onclick="pauseSong()">
             <img src="source/icons/pause.png" alt="Pause">
           </button>
-
           <button class="controlButton next" title="Next button" onclick="nextSong()">
             <img src="source/icons/next.png" alt="Next">
           </button>
-
           <button class="controlButton repeat" title="Repeat button" onclick="setRepeat()">
             <img src="source/icons/repeat.png" alt="Repeat">
           </button>
-
         </div>
-
 
         <div class="playbackBar">
           <span class="progressTime current">0.00</span>
-
           <div class="progressBar">
             <div class="progressBarBg">
               <div class="progress"></div>
             </div>
           </div>
-
           <span class="progressTime remaining">0.00</span>
         </div>
       </div>
     </div>
 
+    <!-- Right -->
     <div id="nowPlayingRight">
       <div class="volumeBar">
-
         <button class="controlButton volume" title="Volume button" onclick="setMute()">
           <img src="source/icons/volume.png" alt="Volume">
         </button>
-
         <div class="progressBar">
           <div class="progressBarBg">
             <div class="progress"></div>
           </div>
         </div>
-
       </div>
     </div>
   </div>

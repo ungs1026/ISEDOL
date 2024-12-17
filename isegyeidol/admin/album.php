@@ -31,7 +31,7 @@ $page = (isset($_GET['page']) && $_GET['page'] != '' && is_numeric($_GET['page']
 $param = '';
 
 $albumArr = $album->list($page, $limit, $paramArr);
-
+$num = $total - (($page - 1) * $limit);
 // header
 include_once './includes/part/inc_header.php';
 
@@ -59,7 +59,7 @@ include_once './includes/part/inc_header.php';
 			// $row['create_at'] = substr($row['create_at'], 0, 16);
 		?>
 			<tr>
-				<td><?= $row['id'] ?></td>
+				<td><?= $num ?></td>
 				<td><img src="../<?= $row['thumbnail'] ?>" alt="" style="width: 3rem;"></td>
 				<td><?= $row['name'] ?></td>
 				<td><?= $row['date'] ?></td>
@@ -71,7 +71,7 @@ include_once './includes/part/inc_header.php';
 					<button class="btn btn-danger btn-sm btn_album_delete" data-id="<?= $row['id']; ?>">삭제</button>
 				</td>
 			</tr>
-		<?php } ?>
+		<?php $num--; } ?>
 	</table>
 
 	<div class="container mt-3 d-flex gap-2 w-50 ">

@@ -21,6 +21,9 @@ class Goods
 				case 2:
 					$sn_str = 'production';
 					break;
+				case 3:
+					$sn_str = 'kind';
+					break;
 			}
 
 			$where = "where " . $sn_str . " LIKE :sf";
@@ -57,6 +60,9 @@ class Goods
 					break;
 				case 2:
 					$sn_str = 'production';
+					break;
+				case 3:
+					$sn_str = 'kind';
 					break;
 			}
 
@@ -124,5 +130,16 @@ class Goods
 			':kind' => $arr['kind'],
 		];
 		$stmt->execute($params);
+	}
+
+	public function kind_list() {
+		$query = 'select kind from goods';
+		$stmt = $this->conn->prepare($query);
+		$stmt->setFetchMode(PDO::FETCH_ASSOC);
+		$stmt->execute();
+
+		$allKindList = $stmt->fetchAll();
+
+		return $allKindList;
 	}
 }

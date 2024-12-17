@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   // search
   const btn_search = document.querySelector("#btn_search");
   btn_search.addEventListener("click", () => {

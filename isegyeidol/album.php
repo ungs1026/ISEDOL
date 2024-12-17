@@ -3,41 +3,55 @@ include_once("includes/mysqli-dbconfig.php");
 include("includes/classes/Artist.php");
 include("includes/classes/Song.php");
 include("includes/classes/Album.php");
+include './includes/pdo-dbconfig.php';
 
-if (isset($_GET['id'])) {
-	$albumId = $_GET['id'];
-	if ($_GET['id'] == 1) {
-		$songId = rand(1, 13);
-	} else if ($_GET['id'] == 2) {
-		$songId = rand(14, 26);
-	} else if ($_GET['id'] == 3) {
-		$songId = rand(27, 41);
-	} else if ($_GET['id'] == 4) {
-		$songId = rand(42, 57);
-	} else if ($_GET['id'] == 5) {
-		$songId = rand(58, 69);
-	} else if ($_GET['id'] == 6) {
-		$songId = rand(70, 82);
+$id = (isset($_GET['id']) && $_GET['id'] != '' && is_numeric($_GET['id'])) ? $_GET['id'] : '';
+
+if ($id != '') {
+	if ($id == 1) {
+		$songArtId = rand(1, 13);
+	} else if ($id == 2) {
+		$songArtId = rand(14, 26);
+	} else if ($id == 3) {
+		$songArtId = rand(27, 41);
+	} else if ($id == 4) {
+		$songArtId = rand(42, 57);
+	} else if ($id == 5) {
+		$songArtId = rand(58, 69);
+	} else if ($id == 6) {
+		$songArtId = rand(70, 82);
 	}
 } else {
 	header("Location: song.php");
 }
 
-$album = new Album($con, $albumId);
-$song = new Song($con, $songId);
+$album = new Album($con, $id);
+if ($id != 0) {
+	$song = new Song($con, $songArtId);
+}
 $artist = $album->getArtist();
 ?>
 
 <div class="entityInfo">
 
 	<div class="leftSection">
-		<img src="<?php echo $song->getSongArt(); ?>">
+		<?php if ($id == 0) { ?>
+			<img src="<?php echo $album->getArtworkPath(); ?>">
+		<?php } else { ?>
+			<img src="<?php echo $song->getSongArt(); ?>">
+		<?php } ?>
 	</div>
 
 	<div class="rightSection">
 		<h2><?php echo $album->getTitle(); ?></h2>
-		<p>By <?php echo $artist->getName(); ?></p>
-		<p style="text-transform: uppercase;"><?php echo $album->getNumberOfSongs(); ?> songs</p>
+		<p style="text-transform: uppercase;">By <?php echo $artist->getName(); ?></p>
+		<p style="text-transform: uppercase;"><?php 
+			if ($id != 0) {
+				echo $album->getNumberOfSongs(); 
+			} else {
+				echo $album->getNumberAllSong();
+			}
+		?> songs</p>
 
 	</div>
 
@@ -48,7 +62,11 @@ $artist = $album->getArtist();
 	<ul class="tracklist">
 
 		<?php
-		$songIdArray = $album->getSongIds();
+		if ($id != 0) {
+			$songIdArray = $album->getSongIds();
+		} else {
+			$songIdArray = $album->getAllSong();
+		}
 
 		$i = 1;
 		foreach ($songIdArray as $songId) {
@@ -70,12 +88,12 @@ $artist = $album->getArtist();
 
 					<div class='trackDuration'>
 						<span class='duration'>" . $albumSong->getDuration() . "</span>
+						<span class='play'>Hits : " . $albumSong->getPlay() . "</span>
 					</div>
-
 
 				</li>";
 
-			$i = $i + 1;
+			$i++;
 		}
 
 		?>

@@ -15,13 +15,14 @@ include_once './includes/lib.php';
 
 $sn = (isset($_GET['sn']) && $_GET['sn'] != '' && is_numeric($_GET['sn'])) ? $_GET['sn'] : '';
 $sf = (isset($_GET['sf']) && $_GET['sf'] != '') ? $_GET['sf'] : '';
-
 // $total, $limit, $page_limit, $page, $param
 
 $paramArr = ['sn' => $sn, 'sf' => $sf];
 
 // user
 $goods = new Goods($pdo);
+
+$kindArr = array_values(array_unique(array_column($goods->kind_list(), 'kind')));
 
 $total = $goods->total($paramArr);
 $limit = 10;
@@ -30,10 +31,8 @@ $page = (isset($_GET['page']) && $_GET['page'] != '' && is_numeric($_GET['page']
 
 $param = '';
 
-$start_idx = ($page - 1) * $limit + 1;
-
 $goodsArr = $goods->list($page, $limit, $paramArr);
-$num = $start_idx;
+$num = $total - (($page - 1) * $limit);
 
 // header
 include_once './includes/part/inc_header.php';
@@ -60,12 +59,15 @@ include_once './includes/part/inc_header.php';
 		foreach ($goodsArr as $row) {
 			// 데이터 정리
 			// $row['create_at'] = substr($row['create_at'], 0, 16);
+
+			$price = number_format($row['price']);
+			$price .= '￦';
 		?>
 			<tr>
 				<td><?= $num ?></td>
 				<td><?= $row['name'] ?></td>
 				<td><img src="../<?= $row['img'] ?>" alt="" style="width: 3rem;"></td>
-				<td><?= $row['price'] ?></td>
+				<td><?= $price ?></td>
 				<td><?= $row['production'] ?></td>
 				<td><?= $row['sales'] ?></td>
 				<td><?= $row['kind'] ?></td>
@@ -74,7 +76,7 @@ include_once './includes/part/inc_header.php';
 				</td>
 			</tr>
 		<?php 
-		$num++;
+		$num--;
 	} 
 	?>
 
@@ -84,8 +86,9 @@ include_once './includes/part/inc_header.php';
 		<select class="form-select w-25" name="sn" id="sn">
 			<option value="1">Name</option>
 			<option value="2">Production</option>
+			<option value="3">Kind</option>
 		</select>
-		<input type="text" class="form-control w-25" id="sf" name="sf">
+		<input type="text" class="form-control w-25" id="sf" name="sf" value="<?= $sf ?>">
 		<button class="btn btn-primary w-25" id="btn_search">검색</button>
 		<button class="btn btn-success w-25" id="btn_all">전체목록</button>
 	</div>
@@ -125,12 +128,9 @@ include_once './includes/part/inc_header.php';
 					<div class="w-50">
 						<label for="goods_kind" class="form-label mb-0">Kind</label>
 						<select name="year" id="goods_kind" class="form-select">
-							<option value="cushion">cushion</option>
-							<option value="acrylic">acrylic</option>
-							<option value="photo">photo</option>
-							<option value="sundries">sundries</option>
-							<option value="pad">pad</option>
-							<option value="clothes">clothes</option>
+							<?php foreach($kindArr as $kindRow) { ?>
+								<option value="<?= $kindRow ?>"><?= $kindRow ?></option>
+							<?php } ?>
 						</select>
 					</div>
 				</div>
@@ -163,6 +163,15 @@ include_once './includes/part/inc_header.php';
 		</div>
 	</div>
 </div>
+
+<script>
+  // URL로 전달된 값 설정
+  const snValue = "<?php echo $sn; ?>";
+  const selectElement = document.querySelector("#sn");
+  if (snValue) {
+    selectElement.value = snValue; // select에서 선택된 값 설정
+  }
+</script>
 
 <?php
 include_once './includes/part/inc_footer.php';

@@ -1,10 +1,16 @@
 <?php
-include("../../mysqli-dbconfig.php");
+include_once '../../pdo-dbconfig.php';
 
-if(isset($_POST['songId'])) {
+$songId = (isset($_POST['songId']) && $_POST['songId'] != '' && is_numeric($_POST['songId'])) ? $_POST['songId'] : '';
+
+if($songId != '') {
 	$songId = $_POST['songId'];
-	$query = mysqli_query($con, "SELECT * FROM songs WHERE id='$songId'");
-	$resultArray = mysqli_fetch_array($query);
-	echo json_encode($resultArray);
+
+	$sql = 'select * from songs where id=:id';
+	$stmt = $pdo->prepare($sql);
+	$stmt->setFetchMode(PDO::FETCH_ASSOC);
+	$stmt->bindParam(':id', $songId);
+	$stmt->execute();
+	echo json_encode($stmt->fetch());
 }
 ?>

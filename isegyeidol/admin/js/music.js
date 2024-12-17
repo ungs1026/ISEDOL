@@ -101,6 +101,14 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (data.result == "empty_mode") {
           alert("mode 값이 비었습니다");
           return false;
+        } else if (data.result == "not_arrowed_ext") {
+          alert("MP3파일의 형식이 잘못되었습니다. .mp3 파일로 업로드해주세요");
+          self.location.reload();
+          return false;
+        } else if (data.result == "title_repeated") {
+          alert("Title이 중복됩니다. 중복되지 않은 곡을 업로드해주세요");
+          self.location.reload();
+          return false;
         }
       } else {
         alert("Error : " + xhr.status);

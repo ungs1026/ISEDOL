@@ -1,18 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
-@import url('https://fonts.googleapis.com/css?family=Kode Mono');
 @import url('https://fonts.googleapis.com/css?family=ADLaM Display');
 
 /*korean*/
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
-/* 부드러운 스크롤 */
 html {
   scroll-behavior: smooth;
 }
-
 
 h1 {
   font-weight: 700;
@@ -35,13 +29,13 @@ header {
   z-index: 2000;
   /* Ensure it stays on top */
   transition: box-shadow 0.3s ease;
-  /* 그림자 효과 부드럽게 */
+  /* ê·¸ë¦¼ìž íš¨ê³¼ ë¶€ë“œëŸ½ê²Œ */
   padding-top: 10px;
 }
 
 header.scrolled {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  /* 그림자 추가 */
+  /* ê·¸ë¦¼ìž ì¶”ê°€ */
 }
 
 main {
@@ -115,13 +109,13 @@ a {
 	font-size: 1.3rem;
 }
 
-/* 레이블 스타일 */
+/* ë ˆì´ë¸” ìŠ¤íƒ€ì¼ */
 label {
   font-weight: 700;
   text-transform: uppercase;
 }
 
-/* 네비게이션 바와 본문 영역 사이의 파란색 선 */
+/* ë„¤ë¹„ê²Œì´ì…˜ ë°”ì™€ ë³¸ë¬¸ ì˜ì—­ ì‚¬ì´ì˜ íŒŒëž€ìƒ‰ ì„  */
 .nav-separator {
   height: 3px;
   background-color: #c4baf4;
@@ -295,7 +289,7 @@ body {
 }
 
 .progress {
-  background-color: gray;
+  background-color: #cdb8f1;
   height: 4px;
   width: 0;
   border-radius: 2px;
@@ -319,13 +313,13 @@ body {
 }
 
 #nowPlayingLeft .trackInfo .trackName span {
+  display: inline-block;
   font-family: "Nanum Gothic", sans-serif;
-  font-weight: bold;
+  font-weight: 900;
+  text-transform: uppercase;
   color: black;
   margin: 6px 0;
-  display: inline-block;
   width: 100%;
-  text-transform: uppercase;
 }
 
 #nowPlayingLeft .trackInfo .artistName span {
@@ -427,24 +421,24 @@ body {
 }
 
 .gridViewItem {
-  left: 4%;
   position: relative;
   display: flex;
   width: 100%;
 	justify-content:center;
+	padding-block: 1rem;
 }
 
 .gridViewItem img {
   border-radius: 3rem;
-  width: 180px;
-  height: 180px;
+  width: 10rem;
+  height: 10rem;
   object-fit: cover;
   filter: drop-shadow(0 0 5px black);
 }
 
 .gridViewItem img:hover {
   transform: scale(1.2) translateY(-20px);
-	transition: all 0.5s ease-in-out;
+	transition: all 0.4s ease-in-out;
 }
 
 .gridViewInfo {
@@ -452,7 +446,7 @@ body {
   font-family: 'ADLaM Display', sans-serif;
   font-weight: 900;
   text-align: center;
-  padding: 15px 0;
+  padding: 10px 0;
   text-overflow: ellipsis;
   text-transform: uppercase;
   overflow: hidden;
@@ -462,10 +456,6 @@ body {
 .gridViewInfo:hover {
 	transform: scale(1.05);
 	transition: transform 0.5s ease-in-out;
-}
-
-.gridViewItem a {
-  text-decoration: none;
 }
 
 .entityInfo {
@@ -572,6 +562,9 @@ border-radius: 1.5rem;
 }
 
 .tracklistRow .trackDuration {
+	display:flex;
+	flex-direction: column;
+	gap: 6px;
   width: 12%;
   float: left;
   text-align: right;
@@ -628,13 +621,10 @@ border-radius: 1.5rem;
 }
 
 .gridViewContainer {
-  width: 80%;
+  width: 90%;
 	display: grid;
-	left:0;
-	grid-auto-flow: column;
-	place-items: center;
-	height: 70vh;
-	align-content: center;
+	grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+	align-items: center;
 }
 
 .artist-main .gridViewContainer {
@@ -642,12 +632,6 @@ border-radius: 1.5rem;
 	width: 100%;
 	flex-direction: column;
 	height: inherit;
-}
-
-.artist-main .gridViewContainer .gridViewItem {
-	width: 90%;
-	margin-top: 4rem;
-	margin-right: 10rem;
 }
 
 .tracklistContainer h2,
@@ -880,16 +864,15 @@ input:focus {
   cursor: pointer;
 }
 
-/* 스크롤바의 폭 너비 */
 .scrollbar::-webkit-scrollbar {
 	width: 10px;  
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
-	background: #d46aff; /* 스크롤바 색상 */
-	border-radius: 10px; /* 스크롤바 둥근 테두리 */
+	background: #d46aff; 
+	border-radius: 10px; 
 }
 
 .scrollbar::-webkit-scrollbar-track {
-	background: #f7dbff;  /*스크롤바 뒷 배경 색상*/
+	background: #f7dbff; 
 }

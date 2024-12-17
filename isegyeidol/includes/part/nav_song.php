@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+	session_start();
+}
 
 include('includes/getUserId.php');
 ?>
@@ -22,7 +24,7 @@ include('includes/getUserId.php');
 			<?php if ($user['level'] == 10) { ?>
 				<div class="admin_sec">
 					<a href="admin/admin.php">
-						<span>Admin</span>
+						<span style="color: black; font-weight: 900;">Admin</span>
 						<img src="<?= $user['profilePic'] ?>" alt="profilePic">
 					</a>
 				</div>

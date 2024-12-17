@@ -29,8 +29,6 @@
 	position: relative;
 	width: 820px;
 	height: 370px;
-	opacity: 0.5;
-	transition: opacity 1s;
 }
 
 .event .swiper-slide img {
@@ -38,10 +36,6 @@
 	height: 370px;
 	object-fit: cover;
 	border-radius: 2rem;
-}
-
-.event .swiper-slide-active {
-	opacity: 1;
 }
 
 .event .swiper-slide .btn {
@@ -161,7 +155,7 @@
 
 .member-icon-group .member.active {
 	width: 100%;
-	height: 60vh;
+	height: 40rem;
 	transition: all .5s ease-in-out;
 
 	.member-img {
@@ -197,7 +191,7 @@
 
 		.inner-des {
 			display: flex;
-			height: 90%;
+			height: 100%;
 			justify-content: center;
 			align-items: center;
 			gap: 2rem;

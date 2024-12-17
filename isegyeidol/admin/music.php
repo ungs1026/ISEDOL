@@ -30,8 +30,7 @@ $page = (isset($_GET['page']) && $_GET['page'] != '' && is_numeric($_GET['page']
 $param = '';
 $musicArr = $music->list($page, $limit, $paramArr);
 
-$start_idx = ($page - 1) * $limit + 1;
-$num = $start_idx;
+$num = $total - (($page - 1) * $limit);
 // header
 include_once './includes/part/inc_header.php';
 
@@ -59,7 +58,7 @@ include_once './includes/part/inc_header.php';
 			// $row['create_at'] = substr($row['create_at'], 0, 16);
 		?>
 			<tr>
-				<td><?= $row['id'] ?></td>
+				<td><?= $num ?></td>
 				<td><img src="../<?= $row['songArt'] ?>" alt="" style="width: 3rem;"></td>
 				<td><?= $row['title'] ?></td>
 				<td>
@@ -115,7 +114,7 @@ include_once './includes/part/inc_header.php';
 					<button class="btn btn-danger btn-sm btn_music_delete" data-id="<?= $row['id']; ?>">삭제</button>
 				</td>
 			</tr>
-		<?php $num++;
+		<?php $num--;
 		} ?>
 	</table>
 
@@ -157,23 +156,23 @@ include_once './includes/part/inc_header.php';
 					<div class="flex-grow-2">
 						<label for="music_artist" class="form-label">Artist</label>
 						<select name="year" id="music_artist" class="form-select">
-							<option value="1">INE</option>
-							<option value="2">JINGBURGER</option>
-							<option value="3">LILPA</option>
-							<option value="4">JURURU</option>
-							<option value="5">GOSEGU</option>
-							<option value="6">VIICHAN</option>
+							<?php
+							$artistArr = $music->artist_list();
+							foreach ($artistArr as $artistRow) {
+							?>
+								<option value="<?= $artistRow['id'] ?>"><?= $artistRow['name'] ?></option>
+							<?php } ?>
 						</select>
 					</div>
 					<div class="flex-grow-1">
 						<label for="music_album" class="form-label">Album</label>
 						<select name="year" id="music_album" class="form-select">
-							<option value="1">Playlist_INE</option>
-							<option value="2">Playlist_JINGBURGER</option>
-							<option value="3">Playlist_LILPA</option>
-							<option value="4">Playlist_JURURU</option>
-							<option value="5">Playlist_GOSEGU</option>
-							<option value="6">Playlist_VIICHAN</option>
+							<?php
+								$albumArr = $music->album_list();
+								foreach ($albumArr as $albumRow) {
+							?>
+								<option value="<?= $albumRow['id'] ?>"><?= $albumRow['title'] ?></option>
+							<?php } ?>
 						</select>
 					</div>
 				</div>
@@ -200,6 +199,18 @@ include_once './includes/part/inc_header.php';
 		</div>
 	</div>
 </div>
+
+<script>
+	// 모든 select 요소를 선택
+	const allSelects = document.querySelectorAll("select");
+
+	// 각 select 요소의 option을 순회하면서 text를 대문자로 변환
+	allSelects.forEach(select => {
+		for (let option of select.options) {
+			option.text = option.text.toUpperCase();
+		}
+	});
+</script>
 
 <?php
 include_once './includes/part/inc_footer.php';

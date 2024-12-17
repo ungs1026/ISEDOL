@@ -46,10 +46,10 @@
 		<div class="swiper-container">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
-					<img src="./source/img/register_1.png" alt="">
+					<img src="./source/img/register_2.jpg" alt="">
 				</div>
 				<div class="swiper-slide">
-					<img src="./source/img/register_2.jpg" alt="">
+					<img src="./source/img/register_1.png" alt="">
 				</div>
 				<div class="swiper-slide">
 					<img src="./source/img/register_3.jpg" alt="">

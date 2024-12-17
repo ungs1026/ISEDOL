@@ -1,9 +1,12 @@
 <?php
-include("../../mysqli-dbconfig.php");
+include("../../pdo-dbconfig.php");
 
-if(isset($_POST['songId'])) {
-	$songId = $_POST['songId'];
+$songId = (isset($_POST['songId']) && $_POST['songId'] != '' && is_numeric($_POST['songId'])) ? $_POST['songId'] : '';
 
-	$query = mysqli_query($con, "UPDATE song SET plays = plays + 1 WHERE id='$songId'");
+if($songId != '') {
+	$query = 'update songs set plays = plays + 1 where id=:id';
+	$stmt = $pdo->prepare($query);
+	$stmt->bindParam(':id', $songId);
+	$stmt->execute();
 }
 ?>
