@@ -53,13 +53,15 @@
 }
 .scrollbar::-webkit-scrollbar-track { background: #f7dbff;  /*스크롤바 뒷 배경 색상*/ }
 ```
+<div align=center> <h3>💻**Techniques**</h3>
+	<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white" style="min-height:30px">
+ 	<img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white" style="min-height:30px"> 
+	<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" style="min-height:30px"> 
+  	<img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white" style="min-height:30px"> 
+	<img src="https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white" style="height:30px">
+	<img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white" style="height:30px">
+</div>
 
-### 💻**Techniques**
-- [PHP (7.4.33 ver)]
-- [phpMyAdmin]
-- [SQL]
-- [HTML5], [CSS3], [JavaScript]
-- [Visual Studio Code]
 
 <hr>
 
