@@ -59,8 +59,10 @@
 	<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" style="min-height:30px"> 
   	<img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white" style="min-height:30px"> 
 	<img src="https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white" style="height:30px">
-	<img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white" style="height:30px">
+	<img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white"/>
 </div>
+
+
 
 
 <hr>
