@@ -9,11 +9,11 @@
 		?>
 
 		<!-- 정렬 방법 -->
-		<form id="filter-form" action="<?php echo $formAction; ?>" method="get">
+		<form id="filter-form" action="" method="get">
 			<div class="filter-section">
 				<h3>Sort By</h3>
 				<div class="filter-option">
-					<input type="radio" id="sort-all" name="sort" value="all" checked>
+					<input type="radio" id="sort-all" name="sort" value="all">
 					<label for="sort-all">All</label>
 				</div>
 				<div class="filter-option">
@@ -33,7 +33,7 @@
 			<!-- 가격 범위 슬라이더 -->
 			<div class="price-range">
 				<h3>Price Range</h3>
-				<input type="range" id="price-slider" name="price" min="0" max="100000" step="100" value="100000">
+				<input type="range" id="price-slider" name="price" min="0" max="100000" step="100">
 				<span id="price-value"></span>
 			</div>
 
@@ -41,7 +41,7 @@
 			<div class="production-filter">
 				<h3>Production</h3>
 				<div class="filter-option">
-					<input type="radio" id="prod-all" name="kind" value="all" checked>
+					<input type="radio" id="prod-all" name="kind" value="all">
 					<label for="prod-all">All</label>
 				</div>
 				<div class="filter-option">
@@ -85,23 +85,99 @@
 
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
-		// 가격 범위 슬라이더와 값 업데이트
 		const priceSlider = document.getElementById('price-slider');
 		const priceValue = document.getElementById('price-value');
-
+		const filterForm = document.getElementById('filter-form');
+		
 		function updatePriceValue() {
-			priceValue.textContent = `${Number(priceSlider.value).toLocaleString()}`;
+			if(priceSlider && priceValue) {
+				priceValue.textContent = `${Number(priceSlider.value).toLocaleString()}`;
+			}
 		}
 
-		priceSlider.addEventListener('input', updatePriceValue);
-		updatePriceValue(); // 초기값 설정
+		function setInitialState() {
+			const urlParams = new URLSearchParams(window.location.search);
+			const sort = urlParams.get('sort') || 'all';
+			const kind = urlParams.get('kind') || 'all';
+			const price = urlParams.get('price') || '100000';
+			const search = urlParams.get('search') || '';
 
-		// 사이드바 내 검색 기능
-		const searchBar = document.getElementById('search-bar');
+			const sortRadio = document.querySelector(`input[name="sort"][value="${sort}"]`);
+			if (sortRadio) sortRadio.checked = true;
 
-		searchBar.addEventListener('input', function() {
-			const query = searchBar.value.toLowerCase();
-			console.log('Search Query:', query);
+			const kindRadio = document.querySelector(`input[name="kind"][value="${kind}"]`);
+			if (kindRadio) kindRadio.checked = true;
+
+			if(priceSlider) {
+				priceSlider.value = price;
+				updatePriceValue();
+			}
+
+			const searchBar = document.getElementById('search-bar');
+			if(searchBar) {
+				searchBar.value = search;
+			}
+		}
+
+		function fetchContent(url) {
+			const ajaxUrl = new URL(url, window.location.origin);
+			ajaxUrl.searchParams.set('ajax', '1');
+
+			fetch(ajaxUrl)
+				.then(response => response.text())
+				.then(html => {
+					const parser = new DOMParser();
+					const doc = parser.parseFromString(html, 'text/html');
+					
+					const newGrid = doc.querySelector('.albums-grid');
+					const newPagination = doc.querySelector('.pagination');
+					
+					const currentGrid = document.querySelector('.albums-grid');
+					const currentPagination = document.querySelector('.pagination');
+
+					if (newGrid && currentGrid) {
+						currentGrid.innerHTML = newGrid.innerHTML;
+					}
+
+					if (newPagination && currentPagination) {
+						currentPagination.innerHTML = newPagination.innerHTML;
+					} else if (currentPagination) {
+						currentPagination.innerHTML = '';
+					}
+					
+					history.pushState(null, '', url);
+					setInitialState(); // 페이지네이션 후에도 사이드바 상태를 재설정
+				})
+				.catch(error => console.error('Error fetching filtered content:', error));
+		}
+
+		if (priceSlider) {
+			priceSlider.addEventListener('input', updatePriceValue);
+		}
+		
+		setInitialState();
+
+		if (filterForm) {
+			filterForm.addEventListener('submit', function(event) {
+				event.preventDefault();
+				const formData = new FormData(filterForm);
+				const params = new URLSearchParams(formData);
+				const url = `${window.location.pathname}?${params.toString()}`;
+				fetchContent(url);
+			});
+		}
+
+		document.addEventListener('click', function(event) {
+			const target = event.target.closest('.pagination a');
+			if (target) {
+				event.preventDefault();
+				fetchContent(target.href);
+			}
 		});
+
+		window.addEventListener('popstate', function() {
+			fetchContent(window.location.href);
+		});
+
 	});
 </script>

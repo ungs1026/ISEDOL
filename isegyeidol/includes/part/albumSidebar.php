@@ -9,11 +9,11 @@
 		?>
 
 		<!-- sort 방법 -->
-		<form id="filter-form" action="<?php echo $formAction; ?>" method="get">
+		<form id="filter-form" action="" method="get">
 			<div class="filter-section">
 				<h3>Sort By</h3>
 				<div class="filter-option">
-					<input type="radio" id="sort-all" name="sort" value="all" checked>
+					<input type="radio" id="sort-all" name="sort" value="all">
 					<label for="sort-all">All</label>
 				</div>
 				<div class="filter-option">
@@ -30,7 +30,7 @@
 			<div class="types-filter">
 				<h3>Types</h3>
 				<div class="filter-option">
-					<input type="radio" id="type-all" name="type" value="all" checked>
+					<input type="radio" id="type-all" name="type" value="all">
 					<label for="type-all">All</label>
 				</div>
 				<div class="filter-option">
@@ -47,7 +47,7 @@
 			<div class="kind-filter">
 				<h3>Years</h3>
 				<div class="filter-option">
-					<input type="radio" id="year-all" name="year" value="all" checked>
+					<input type="radio" id="year-all" name="year" value="all">
 					<label for="year-all">All</label>
 				</div>
 				<div class="filter-option">
@@ -83,13 +83,84 @@
 
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
+		const filterForm = document.getElementById('filter-form');
+		
+		function setInitialState() {
+			const urlParams = new URLSearchParams(window.location.search);
+			const sort = urlParams.get('sort') || 'all';
+			const type = urlParams.get('type') || 'all';
+			const year = urlParams.get('year') || 'all';
+			const search = urlParams.get('search') || '';
 
-		// 사이드바 내 검색 기능
-		const searchBar = document.getElementById('search-bar');
+			const sortRadio = document.querySelector(`input[name="sort"][value="${sort}"]`);
+			if (sortRadio) sortRadio.checked = true;
 
-		searchBar.addEventListener('input', function() {
-			const query = searchBar.value.toLowerCase();
-			console.log('Search Query:', query);
+			const typeRadio = document.querySelector(`input[name="type"][value="${type}"]`);
+			if (typeRadio) typeRadio.checked = true;
+
+			const yearRadio = document.querySelector(`input[name="year"][value="${year}"]`);
+			if (yearRadio) yearRadio.checked = true;
+
+			const searchBar = document.getElementById('search-bar');
+			if (searchBar) {
+				searchBar.value = search;
+			}
+		}
+
+		function fetchContent(url) {
+			const ajaxUrl = new URL(url, window.location.origin);
+			ajaxUrl.searchParams.set('ajax', '1');
+
+			fetch(ajaxUrl)
+				.then(response => response.text())
+				.then(html => {
+					const parser = new DOMParser();
+					const doc = parser.parseFromString(html, 'text/html');
+					
+					const newGrid = doc.querySelector('.album-grid');
+					const newPagination = doc.querySelector('.pagination');
+					
+					const currentGrid = document.querySelector('.album-grid');
+					const currentPagination = document.querySelector('.pagination');
+
+					if (newGrid && currentGrid) {
+						currentGrid.innerHTML = newGrid.innerHTML;
+					}
+
+					if (newPagination && currentPagination) {
+						currentPagination.innerHTML = newPagination.innerHTML;
+					} else if (currentPagination) {
+						currentPagination.innerHTML = '';
+					}
+					
+					history.pushState(null, '', url);
+					setInitialState();
+				})
+				.catch(error => console.error('Error fetching filtered content:', error));
+		}
+
+		setInitialState();
+
+		if (filterForm) {
+			filterForm.addEventListener('submit', function(event) {
+				event.preventDefault();
+				const formData = new FormData(filterForm);
+				const params = new URLSearchParams(formData);
+				const url = `${window.location.pathname}?${params.toString()}`;
+				fetchContent(url);
+			});
+		}
+
+		document.addEventListener('click', function(event) {
+			const target = event.target.closest('.pagination a');
+			if (target) {
+				event.preventDefault();
+				fetchContent(target.href);
+			}
+		});
+
+		window.addEventListener('popstate', function() {
+			fetchContent(window.location.href);
 		});
 	});
 </script>
