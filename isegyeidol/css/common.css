@@ -30,14 +30,11 @@ body {
 header {
 	position: fixed;
 	top: 0;
-	width: 100%;
-	height: 6rem;
+	width: 100vw;
+	height: 6vw;
 	background-color: #ffffff;
-	/* Optional: background color */
 	z-index: 2000;
-	/* Ensure it stays on top */
 	transition: box-shadow 0.3s ease;
-	/* 그림자 효과 부드럽게 */
 	padding-top: 10px;
 }
 

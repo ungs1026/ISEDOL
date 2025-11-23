@@ -22,7 +22,7 @@ include("includes/classes/Song.php");
 
     <div id="topContainer">
 
-      <?php include("includes/part/nav_song.php"); ?>
+      <?php include("includes/part/nav.php"); ?>
 
       <div id="mainViewContainer">
 

@@ -2,6 +2,17 @@
 if (session_status() === PHP_SESSION_NONE) {
 	session_start();
 }
+
+// if (!isset($_SESSION['userId']) || $_SESSION['userId'] == 0) {
+// 	echo '
+// 		<script>
+// 			alert("로그인이 필요합니다.")
+// 			location.href = "register.php"
+// 		</script>
+// 	';
+// 	exit();
+// }
+
 include('includes/getUserId.php');
 
 ?>
@@ -20,18 +31,28 @@ include('includes/getUserId.php');
 		</div>
 		<div class="nav-right">
 			<!--nav right section-->
-			<?php if ($user['level'] == 10) { ?>
+			<?php if (isset($user['level']) && $user['level'] == 10) { ?>
 				<div class="admin_sec">
 					<a href="admin/admin.php">
 						<span>Admin</span>
 						<img src="<?= $user['profilePic'] ?>" alt="profilePic">
 					</a>
 				</div>
-			<?php } else { ?>
-				<img src="<?= $user['profilePic'] ?>" alt="profilePic">
+			<?php } else { 
+				if (isset($_SESSION['userId'])) { 
+					?> <img src="<?= $user['profilePic'] ?>" alt="profilePic"> <?php
+				} else { 
+					?> <img src="./source/img/admin.png" alt="profilePic"> <?php
+				}?>
 			<?php } ?>
 
-			<span class="user"><?= $user['username'] ?></span>
+			<?php 
+			if (isset($_SESSION['userId'])) { 
+				?> <span class="user"><?= $user['username'] ?></span><?php
+			} else { 
+				?> <span class="user">GUEST</span> <?php
+			}?>
+			
 			<?php if (isset($_SESSION['userId']) && $_SESSION['userId'] != 0) { ?>
 				<p><button id="btn-logout" onclick="location.href='includes/handlers/ajax/logout.php'">LogOut</button></p>
 			<?php } else { ?>

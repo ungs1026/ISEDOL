@@ -65,7 +65,7 @@ include_once './includes/part/inc_header.php';
 				<td><?= $row['date'] ?></td>
 				<td><?= $row['kind'] ?></td>
 				<td>
-					<a href="<?= $row['youtube'] ?>"><img src="../source/img/youtube.png" alt="" style="width: 3rem;"></a>
+					<a href="<?= $row['youtube'] ?>" target="_blank"><img src="../source/img/youtube.png" alt="" style="width: 3rem;"></a>
 				</td>
 				<td>
 					<button class="btn btn-danger btn-sm btn_album_delete" data-id="<?= $row['id']; ?>">삭제</button>

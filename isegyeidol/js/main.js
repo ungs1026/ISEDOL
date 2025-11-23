@@ -20,7 +20,7 @@ let eventSwiper = new Swiper('.event .swiper-container', {
     disableOnInteraction: false,  // 사용자가 스와이프 후에도 자동 슬라이드 계속
     pauseOnMouseEnter: true,      // 마우스가 슬라이드 위에 있을 때 자동 재생 멈춤
   },
-})
+});
 
 // MEMBER
 // Move

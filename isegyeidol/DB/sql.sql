@@ -5,7 +5,7 @@ SQL
 create table users (
 	id int(11) not null auto_increment,
 	username varchar(25) not null,
-	fisrtName varchar(50) not null,
+	firstName varchar(50) not null,
 	lastName varchar(50) not null,
 	email varchar(200) not null,
 	password varchar(50) not null,
@@ -80,7 +80,7 @@ insert into albums (title, artist, artworkPath) values
 
 --artists
 create table artists(
-	id int(11) not null auto_increment,
+	id int not null auto_increment,
 	name varchar(50) not null,
 	primary key(id)
 );

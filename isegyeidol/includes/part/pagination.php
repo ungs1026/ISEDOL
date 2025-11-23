@@ -20,19 +20,6 @@ $search = isset($_GET['search']) ? $_GET['search'] : '';
 
 if ($kind != 'all') {
     $query .= " WHERE kind = :kind";
-		if($kind == 'cushion'){
-			$kind = 'cushion';
-		} else if ($kind == 'acrylic') {
-			$kind = 'acrylic';
-		} else if ($kind == 'photo') {
-			$kind = 'photo';
-		} else if ($kind == 'sundries') {
-			$kind = 'sundries';
-		} else if ($kind == 'pad') {
-			$kind = 'pad';
-		} else if ($kind == 'clothes') {
-			$kind = 'clothes';
-		}
 }
 if (!empty($search)) {
     $query .= ($kind != 'all' ? " AND" : " WHERE") . " name LIKE :search";

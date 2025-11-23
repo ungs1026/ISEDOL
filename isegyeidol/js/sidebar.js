@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 
 	function updatePriceValue() {
-		priceValue.textContent = `${priceSlider.value.toLocaleString()}`;
+		priceValue.textContent = `${priceSlider.value.toLocaleString('ko-KR')}`;
 	}
 
 	priceSlider.addEventListener('input', updatePriceValue);

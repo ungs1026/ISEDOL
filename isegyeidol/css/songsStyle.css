@@ -22,20 +22,16 @@ p {
 header {
   position: fixed;
   top: 0;
-  width: 100%;
-  height: 6rem;
+  width: 100vw;
+  height: 6vw;
   background-color: #ffffff;
-  /* Optional: background color */
   z-index: 2000;
-  /* Ensure it stays on top */
   transition: box-shadow 0.3s ease;
-  /* ê·¸ë¦¼ìž íš¨ê³¼ ë¶€ë“œëŸ½ê²Œ */
   padding-top: 10px;
 }
 
 header.scrolled {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  /* ê·¸ë¦¼ìž ì¶”ê°€ */
 }
 
 main {
@@ -107,15 +103,28 @@ a {
 	font-weight: bold;
   color: black;
 	font-size: 1.3rem;
+  margin-right: 2rem;
 }
 
-/* ë ˆì´ë¸” ìŠ¤íƒ€ì¼ */
+/* AdminUser */
+.admin_sec>a {
+	display:flex;
+	flex-direction: column;
+}
+
+.admin_sec a span {
+  color: #080808;
+}
+
+.admin_sec>a img {
+	margin: 0 auto;
+}
+
 label {
   font-weight: 700;
   text-transform: uppercase;
 }
 
-/* ë„¤ë¹„ê²Œì´ì…˜ ë°”ì™€ ë³¸ë¬¸ ì˜ì—­ ì‚¬ì´ì˜ íŒŒëž€ìƒ‰ ì„  */
 .nav-separator {
   height: 3px;
   background-color: #c4baf4;

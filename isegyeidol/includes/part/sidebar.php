@@ -33,7 +33,7 @@
 			<!-- 가격 범위 슬라이더 -->
 			<div class="price-range">
 				<h3>Price Range</h3>
-				<input type="range" id="price-slider" name="price" min="0" max="100000" step="1000" value="100000">
+				<input type="range" id="price-slider" name="price" min="0" max="100000" step="100" value="100000">
 				<span id="price-value"></span>
 			</div>
 
@@ -90,7 +90,7 @@
 		const priceValue = document.getElementById('price-value');
 
 		function updatePriceValue() {
-			priceValue.textContent = `${priceSlider.value.toLocaleString()}`;
+			priceValue.textContent = `${Number(priceSlider.value).toLocaleString()}`;
 		}
 
 		priceSlider.addEventListener('input', updatePriceValue);

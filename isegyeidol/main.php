@@ -395,7 +395,7 @@
 	</div>
 
 	<!--DEBUT-->
-	<h1>- AfreecaTV DEBUT CONSERT-</h1>
+	<h1>- AfreecaTV DEBUT CONSERT -</h1>
 	<div class="debut">
 		<section class="swiper-container">
 			<div class="swiper-wrapper">
@@ -503,7 +503,7 @@
 					</div>
 				</div>
 				<div class="swiper-slide">
-					<a href="#">
+					<a href="https://www.youtube.com/watch?v=opQWTxOwK2I&list=RDopQWTxOwK2I&start_radio=1" target="_blank">
 						<img src="./source/img/consert/main/lilpa_goingout.png" alt="LILPA_CONSERT">
 					</a>
 					<div class="text-area">
