@@ -129,20 +129,6 @@ var swiper = new Swiper('.swiper-container', {
 - SideBar를 통해 정렬 및 검색이 가능하며 이미지 클릭으로 상세 페이지로 이동할 수 있습니다.
 - 각 굿즈 정보는 Primary key인 id로 확인 가능합니다.
 - 정렬로는 인기순, 최신순, 가격이 낮은 것부터 높은 것 혹은 반대로 정렬이 가능합니다. 아래는 정렬의 일부분 입니다.
-```
-if ($kind != 'all') {
-    $query .= " WHERE kind = :kind";
-		if($kind == 'cushion'){ $kind = 'cushion'; } 
-		else if ($kind == 'acrylic') { $kind = 'acrylic'; } 
-		else if ($kind == 'photo') { $kind = 'photo';} 
-		else if ($kind == 'sundries') { $kind = 'sundries'; } 
-		else if ($kind == 'pad') { $kind = 'pad'; } 
-		else if ($kind == 'clothes') { $kind = 'clothes'; }
-}
-if (!empty($search)) {
-    $query .= ($kind != 'all' ? " AND" : " WHERE") . " name LIKE :search";
-}
-```
 
 <br>
 
@@ -158,18 +144,6 @@ if (!empty($search)) {
 - **Song Page**입니다. Song페이지에서 멤버를 클릭해 해당 멤버의 id값으로 내용이 변경됩니다.
 - 하단에 PlayBar가 생성되며 이는 초기 로딩 시 랜덤으로 10곡을 선정해 Playlist에 등록됩니다.
 - 상단 Image의 경우 id에 맞는 멤버의 노래 중 랜덤으로 선택되어 보여줍니다.
-```
-// Url을 통해 멤버의 id값을 받아 해당 멤버의 노래 id값을 rand()로 임의값을 가져온다.
-if (isset($_GET['id'])) {
-	$albumId = $_GET['id'];
-	if ($_GET['id'] == 1) { $songId = rand(1, 13); } 
-	else if ($_GET['id'] == 2) { $songId = rand(14, 26); } 
-	else if ($_GET['id'] == 3) { $songId = rand(27, 41); } 
-	else if ($_GET['id'] == 4) { $songId = rand(42, 57); } 
-	else if ($_GET['id'] == 5) { $songId = rand(58, 69); } 
-	else if ($_GET['id'] == 6) { $songId = rand(70, 82); }
-}
-```
 - 노래를 클릭하는 경우 하단의 PlayBar에 해당 멤버의 모든 노래의 id값이 등록되어 재생됩니다.
 
 <br>
